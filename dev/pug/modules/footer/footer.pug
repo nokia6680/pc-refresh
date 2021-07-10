@@ -1,0 +1,23 @@
+- var ruleLinks = [{name: 'Политика конфиденциальности', link: '#'}, {name: 'Условия пользования', link: '#'}, {name: 'Карта сайта', link: '#'}, {name: 'Правила проведения конкурсов', link: '#'}, {name: 'Политика обработки персональных данных', link: '#'}]
+
+footer.footer
+    .footer__wrapper
+        a(href="#" target="_self").footer__connect Подключиться
+        .footer__social
+            span.footer__social-age 18+
+            
+            ul.footer__social-list
+                +socItem('fb', '#', 'fab fa-facebook-f')
+                +socItem('in', '#', 'fab fa-instagram')
+                +socItem('ok', '#', 'fab fa-odnoklassniki')
+                +socItem('vk', '#', 'fab fa-vk')
+                +socItem('yt', '#', 'fab fa-youtube')
+                +socItem('dz', '#', 'zen')
+        .footer__controls
+            a(href="#" target="_self").footer__controls-link О канале
+            a(href="#" target="_self").footer__controls-link Контакты
+        ul.footer__rules
+            for i in ruleLinks
+                li.footer__rules-item
+                    a(href="" +i.link target="_blank").footer__rules-link=i.name
+        p.footer__copy Paramountcomedy, 2021. Все права защищены. Копирование материалов без согласия запрещено

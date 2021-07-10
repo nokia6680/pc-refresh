@@ -1,0 +1,79 @@
+.menu {
+    width: 100%;
+    background-color: $lightwhite;
+
+    @include flex-setting(column, flex-start, center);
+
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+
+    padding-top: 0.5625rem;
+
+    box-shadow: inset 0px 2px 4px #DCD0C9;
+
+    transform: scaleY(0);
+    transition-property: top;
+    transition: 0.4s linear;
+
+    &.active {
+        transform: scaleY(1);
+        transition: 0.4s ease-in;
+        transition-property: top;
+
+        .menu__block {
+            &:first-child {
+                opacity: 1;
+                transition: all 0.2s ease-in 0.3s;
+            }
+
+            &:last-child {
+                opacity: 1;
+                transition: all 0.2s ease-in 0.5s;
+            }
+        }
+    }
+
+    &__block {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, flex-start);
+        margin-bottom: 0.4375rem;
+
+        opacity: 0;
+    }
+
+    &__title {
+        @include font-setting($main-font, 1rem, 1.1875rem, 700, $darkwhite);
+        text-transform: uppercase;
+
+        margin-bottom: 0.5625rem;
+    }
+
+    &__list {
+        width: 100%;
+        @include flex-setting(row, flex-start, center);
+
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        width: auto;
+        height: 100%;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        margin-right: 1.125rem;
+        margin-bottom: 0.5625rem;
+    }
+
+    &__link {
+        width: 100%;
+        height: auto;
+        display: inline-flex;
+        @include font-setting($main-font, 0.875rem, 1.0625rem, 700, $black);
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+}

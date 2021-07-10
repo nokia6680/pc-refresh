@@ -1,0 +1,200 @@
+.live {
+    width: 100%;
+
+    background-color: $lightwhite;
+
+    overflow-x: hidden;
+
+    &__wrapper {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, center);
+
+        padding: 2rem 0.9375rem 0 0.9375rem;
+        margin-bottom: 2rem;
+        background-color: $lightwhite;
+    }
+
+    &__title {
+        @include font-setting($main-font, 1rem, 1.1875rem, 700, $black);
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    &__slider {
+        width: 100%;
+    }
+
+    &__item {
+        width: 100%;
+        @include flex-setting(column, center, center);
+
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+
+    &__link {
+        width: 100%;
+        height: 100%;
+
+        @include flex-setting(column, flex-start, flex-start);
+
+        text-decoration: none;
+    }
+
+    &__frame {
+        width: 100%;
+        position: relative;
+
+        margin-bottom: 0.9375rem;
+
+        &-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            aspect-ratio: 1 / 1;
+        }
+    }
+
+    @supports not (aspect-ratio: 1 / 1) {
+        .intro__frame {
+            padding-top: 100%;
+            position: relative;
+            width: 100%;
+            height: 0;
+
+            &-image {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    &__time {
+        @include font-setting($main-font, 0.75rem, 0.875rem, 700, $black);
+        text-transform: uppercase;
+
+        padding-left: 1.1875rem;
+        margin-bottom: 0.1875rem;
+
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: '';
+
+            width: 13px;
+            height: 13px;
+
+            background-image: url("data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.5 0C2.90992 0 0 2.90992 0 6.5C0 10.0898 2.90992 13 6.5 13C10.0898 13 13 10.0898 13 6.5C13 2.90992 10.0898 0 6.5 0ZM6.5 11.3503C3.82538 11.3503 1.64945 9.17462 1.64945 6.5C1.64945 3.82538 3.82538 1.64971 6.5 1.64971C9.17462 1.64971 11.3505 3.82563 11.3505 6.5C11.3505 9.17462 9.17462 11.3503 6.5 11.3503Z' fill='black'/%3E%3Cpath d='M7.27997 2.99003H5.71997V7.28003H8.96997V5.72003H7.27997V2.99003Z' fill='black'/%3E%3C/svg%3E");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: contain;
+
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    &__name {
+        @include font-setting($main-font, 1.125rem, 1.375rem, 700, $black);
+        text-align: left;
+
+        margin-bottom: 0.25rem;
+    }
+
+    &__details {
+        @include font-setting($main-font, 0.75rem, 0.875rem, 325, $darkwhite);
+
+        text-align: left;
+        margin-bottom: 2rem;
+    }
+
+    &__prev,
+    &__next {
+        background-color: transparent;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        border: none;
+
+        width: 16px;
+        height: 16px;
+
+        position: absolute;
+
+        cursor: pointer;
+        outline: none;
+
+        z-index: 4;
+
+        top: 40%;
+        transform: translateY(-50%);
+    }
+
+    &__prev {
+        background-image: url("data:image/svg+xml,%3Csvg width='12' height='14' viewBox='0 0 12 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-3.49691e-07 7L12 0.0717978L12 13.9282L-3.49691e-07 7Z' fill='%230F0D0D'/%3E%3C/svg%3E");
+        left: 0.9375rem;
+    }
+
+    &__next {
+        background-image: url("data:image/svg+xml,%3Csvg width='12' height='14' viewBox='0 0 12 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 7L6.52532e-07 0.0717978L4.68497e-08 13.9282L12 7Z' fill='%230F0D0D'/%3E%3C/svg%3E%0A");
+        right: 0.9375rem;
+    }
+
+    &__more {
+        @include flex-setting(column, center, center);
+        @include font-setting($main-font, 1.125rem, 1.375rem, 700, $black);
+
+        text-decoration: none;
+        text-transform: uppercase;
+
+        padding: 0.4375rem 4.4125rem 0.4375rem 3rem;
+
+        background-color: $blue;
+
+        position: relative;
+        transition: 0.2s ease-in-out;
+
+        &::after {
+            position: absolute;
+            content: '';
+
+            width: 17px;
+            height: 17px;
+
+            background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.9368 9.55836H0V7.44166H12.9368L10.9819 5.48672L12.4843 3.98428L17 8.50001L12.4843 13.0157L10.9819 11.5133L12.9368 9.55836Z' fill='%230F0D0D'/%3E%3C/svg%3E%0A");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: contain;
+
+            right: 3rem;
+            top: 50%;
+            transform: translate(0, -50%);
+            transition: 0.2s ease-in-out;
+        }
+
+        &:hover,
+        &:active {
+            color: $white;
+            background-color: $purple;
+            transition: 0.2s ease-in-out;
+
+            &::after {
+                transform: translate(1rem, -50%);
+                transition: 0.2s ease-in-out;
+                background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.9368 9.55836H0V7.44166H12.9368L10.9819 5.48672L12.4843 3.98428L17 8.50001L12.4843 13.0157L10.9819 11.5133L12.9368 9.55836Z' fill='%23ffffff'/%3E%3C/svg%3E%0A");
+
+            }
+        }
+    }
+}

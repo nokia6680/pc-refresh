@@ -1,1 +1,210 @@
-header { flex: 0 0 auto; }
+.header {
+    width: 100%;
+    height: 100%;
+
+    background-color: $orange;
+
+    @include flex-setting(column, center, center);
+
+    max-height: 55px;
+
+    &__wrapper {
+        width: 100%;
+        @include flex-setting(row, space-between, center);
+
+        position: relative;
+
+        padding: 0 0.9375rem;
+    }
+
+    &__logo {
+        @include flex-setting(column, center, center);
+
+        width: 34.14px;
+        height: 39.56px;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    &__controls {
+        @include flex-setting(row, flex-end, center);
+
+        &-search {
+            cursor: pointer;
+            outline: none;
+            border: none;
+            background-color: transparent;
+
+            background-image: url("data:image/svg+xml,%3Csvg width='26' height='26' viewBox='0 0 26 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0)'%3E%3Cpath d='M19.0802 16.7832C20.3596 15.0361 21.1249 12.89 21.1249 10.5635C21.1249 4.73951 16.3864 0.000976562 10.5624 0.000976562C4.73848 0.000976562 0 4.73951 0 10.5635C0 16.3874 4.73853 21.1259 10.5625 21.1259C12.889 21.1259 15.0353 20.3605 16.7825 19.0811L23.7022 26.0008L26 23.703C26 23.7029 19.0802 16.7832 19.0802 16.7832ZM10.5625 17.8759C6.53013 17.8759 3.25001 14.5958 3.25001 10.5635C3.25001 6.53111 6.53013 3.25099 10.5625 3.25099C14.5948 3.25099 17.8749 6.53111 17.8749 10.5635C17.8749 14.5958 14.5948 17.8759 10.5625 17.8759Z' fill='%230F0D0D'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Crect width='26' height='26' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: contain;
+
+            width: 26px;
+            height: 26px;
+        }
+
+        &-toggle {
+            cursor: pointer;
+            position: relative;
+            border: none;
+            background-color: transparent;
+
+            padding: 0;
+            margin-left: 0.875rem;
+            width: 25px;
+            height: 24px;
+
+            background-image: url("data:image/svg+xml,%3Csvg width='25' height='4' viewBox='0 0 25 4' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='25' height='4' fill='%230F0D0D'/%3E%3C/svg%3E");
+            background-position: 50% 50%;
+            background-size: 25px 4px;
+            background-repeat: no-repeat;
+
+            cursor: pointer;
+
+            &::after {
+                position: absolute;
+                content: '';
+
+                width: 100%;
+                height: 4px;
+
+                background-color: $darkblack;
+
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                transition: 0.2s linear;
+            }
+
+            &::before {
+                position: absolute;
+                content: '';
+
+                width: 100%;
+                height: 4px;
+
+                background-color: $darkblack;
+
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                transition: 0.2s linear;
+            }
+
+            &.opened {
+                background-image: none;
+
+                &::after,
+                &::before {
+                    width: 28px;
+                    transition: 0.2s linear;
+                }
+
+                &::after {
+                    transform: translateX(-50%) rotate(45deg);
+                    top: 10px;
+                    transition: 0.2s linear;
+                }
+
+                &::before {
+                    transform: translateX(-50%) rotate(135deg);
+                    bottom: 10px;
+                    transition: 0.2s linear;
+                }
+            }
+        }
+    }
+
+    &__search {
+        position: absolute;
+        background-color: $orange;
+
+        padding: 0.4375rem 0.625rem 0.4375rem 0.625rem;
+
+        @include flex-setting(column, center, center);
+
+        box-shadow: inset 0px 2px 4px #E2A502;
+
+        width: 100%;
+
+        bottom: -52px;
+        left: 0;
+
+        transform: scaleY(0);
+        transition: 0.2s linear;
+        pointer-events: none;
+        transform-origin: top;
+
+        z-index: 10;
+
+        &.active {
+            transform: scaleY(1);
+            transition: 0.2s linear;
+            pointer-events: all;
+            transform-origin: top;
+            z-index: 10;
+        }
+    }
+
+    &__form {
+        width: 100%;
+        background-color: $yellow;
+
+        position: relative;
+
+        padding: 0.25rem 1.875rem 0.125rem 1.5625rem;
+
+        &::after {
+            position: absolute;
+            content: '';
+
+            width: 16px;
+            height: 16px;
+
+            background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0)'%3E%3Cpath d='M11.7417 10.3285C12.529 9.25334 12.9999 7.93267 12.9999 6.50096C12.9999 2.91699 10.0839 0.000976562 6.49996 0.000976562C2.91599 0.000976562 0 2.91699 0 6.50096C0 10.0849 2.91602 13.001 6.49999 13.001C7.93169 13.001 9.25248 12.5299 10.3277 11.7426L14.586 16.0009L16 14.5868C16 14.5868 11.7417 10.3285 11.7417 10.3285ZM6.49999 11.0009C4.01854 11.0009 2.00001 8.98241 2.00001 6.50096C2.00001 4.01952 4.01854 2.00098 6.49999 2.00098C8.98143 2.00098 11 4.01952 11 6.50096C11 8.98241 8.9814 11.0009 6.49999 11.0009Z' fill='%23414141'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Crect width='16' height='16' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: contain;
+
+            left: 0.3125rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &-input {
+            width: 100%;
+
+            background-color: transparent;
+            border: none;
+
+            @include font-setting($main-font, 1.125rem, 1.375rem, 700, $darkgray);
+
+            text-transform: uppercase;
+
+            padding: 0;
+        }
+
+        &-reset {
+            background-color: transparent;
+            border: none;
+
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0.5625rem;
+
+            width: 21px;
+            height: 21px;
+
+            background-image: url("data:image/svg+xml,%3Csvg width='21' height='21' viewBox='0 0 21 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='2.82837' width='25' height='4' transform='rotate(45 2.82837 0)' fill='%230F0D0D'/%3E%3Crect x='20.8313' y='2.82837' width='25' height='4' transform='rotate(135 20.8313 2.82837)' fill='%230F0D0D'/%3E%3C/svg%3E");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+}

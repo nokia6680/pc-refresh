@@ -1,0 +1,39 @@
+- var navLinks = [{type: 'nested', name: 'Все новости', link: '#', subname: 'Лучшее', sublink: '#', subname2: 'Новости сериалов', sublink2: '#'}, {type: '', name: 'Сериалы', link: '#', subname: '', sublink: '', subname2: '', sublink2: ''}, {type: '', name: 'Телепрограмма', link: '#', subname: '', sublink: '', subname2: '', sublink2: ''}, {type: '', name: 'Что посмотреть', link: '#', subname: '', sublink: '', subname2: '', sublink2: ''}]
+- var sortedLinks = [{name: 'Сериалы 2020', link: '#'}, {name: 'Комедийные сериалы', link: '#'}, {name: 'Боевики', link: '#'}, {name: 'Вестерны', link: '#'}, {name: 'Приключения', link: '#'}, {name: 'Семейные', link: '#'}]
+- var newsLinks = [{name: 'Эй, Арнольд!', link: '#'}, {name: 'Корпорации', link: '#'}, {name: 'Детство Шелдона', link: '#'}, {name: 'Клиника', link: '#'}, {name: 'Голдберги', link: '#'}, {name: 'Мамаша', link: '#'}, {name: 'Котопёс', link: '#'}]
+- var seriesItem = [{name: 'Эй, Арнольд!', link: '#'}, {name: 'Корпорации', link: '#'}, {name: 'Детство Шелдона', link: '#'}, {name: 'Клиника', link: '#'}, {name: 'Голдберги', link: '#'}, {name: 'Мамаша', link: '#'}, {name: 'Котопёс', link: '#'}, {name: 'Эй, Арнольд!', link: '#'}, {name: 'Корпорации', link: '#'}, {name: 'Детство Шелдона', link: '#'}, {name: 'Клиника', link: '#'}, {name: 'Голдберги', link: '#'}, {name: 'Мамаша', link: '#'}, {name: 'Котопёс', link: '#'}]
+
+header.header
+    .header__wrapper
+        a(href="/" target="_self").header__logo
+            img(src="static/images/content/logo.svg" alt="Paramount Comedy").header__img
+        nav.header__nav.nav
+            ul.nav__list
+                for i in navLinks
+                    li(class="nav__item " +i.type)
+                        a(href="" +i.link target="_self").nav__link=i.name
+                        ul.nav__sublist
+                            li.nav__subitem
+                                a(href="" +i.sublink target="_self").nav__sublink=i.subname
+                            li.nav__subitem
+                                a(href="" +i.sublink2 target="_self").nav__sublink=i.subname2
+            .nav__menu.menu
+                .menu__block.menu__block--sorted
+                    h3.menu__title Подборки
+                    ul.menu__list
+                        for i in sortedLinks
+                            li.menu__item
+                                a(href="" +i.link target="_self").menu__link=i.name
+                .menu__block.menu__block--news
+                    h3.menu__title Новости о наших шоу
+                    ul.menu__list
+                        for i in newsLinks
+                            li.menu__item
+                                a(href="" +i.link target="_self").menu__link=i.name
+        .header__controls
+            button(type="button").header__controls-search.js-search-toggle
+            button(type="button").header__controls-toggle.js-menu-toggle
+        .header__search.js-search-form
+            form(action="/search/" id="searchForm").header__form
+                input(type="text" name="q" id="searchField" placeholder="что ищем?").header__form-input
+                button(type="button").header__form-reset

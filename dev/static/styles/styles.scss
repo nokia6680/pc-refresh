@@ -6,9 +6,11 @@
 //@include sprites($spritesheet-sprites);
 
 html {
-  font-family: 'Open Sans', Arial, serif;
-  font-size: 16px;
+  font-family: $main-font, Arial, serif;
+  font-size: $base-font-size;
   height: 100%;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
 }
 
 body {
@@ -36,6 +38,13 @@ img {
   max-width: 100%;
   display: block;
 }
+.body--index {
+    background-color: $lightwhite;
+}
+
+.body__dark {
+    background-color: $black;
+}
 
 input,
 button,
@@ -57,20 +66,5 @@ section { position: relative; }
 input,
 select,
 button { outline: none; }
-
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.content { flex: 1 0 auto; }
-
-.container {
-  margin: 0 auto;
-  max-width: $content;
-  width: 100%;
-}
-
 //Модули
 @import "modules/modules";
