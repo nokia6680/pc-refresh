@@ -1,0 +1,10 @@
+- var tagsList = [{link: '#', name: 'Новость'}, {link: '#', name: 'Друзья'}, {link: '#', name: 'Лонгрид'}, {link: '#', name: 'Голдберги'}, {link: '#', name: 'Теория большого взрыва'}, {link: '#', name: 'Трудности ассимиляции'}, {link: '#', name: 'В Филадельфии всегда солнечно'}, {link: '#', name: 'Бруклин 9-9'}, {link: '#', name: 'Факты'}, {link: '#', name: 'Клиника'}, {link: '#', name: 'Сообщество'}, {link: '#', name: 'Мамаша'}, {link: '#', name: 'Как я встретил вашу маму'}, {link: '#', name: 'Южный парк'}, {link: '#', name: 'Аквафина - Нора из Куинса'}, {link: '#', name: 'Детство Шелдона'}, {link: '#', name: 'Последний настоящий мужчина'}];
+
+section.tags
+    .tags__wrapper
+        h2.tags__title Теги
+        
+        ul.tags__list
+            for i in tagsList
+                li.tags__item
+                    a(href="" +i.link target="_self").tags__link=i.name

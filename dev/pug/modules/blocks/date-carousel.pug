@@ -1,0 +1,13 @@
+-var weekDates = [{datetime: '12-07-2021', date: '12.07', weekday: 'Пн', type:''}, {datetime: '13-07-2021', date: '13.07', weekday: 'Вт', type:''}, {datetime: '14-07-2021', date: '14.07', weekday: 'Ср', type:''}, {datetime: '15-07-2021', date: '15.07', weekday: 'Чт', type:''}, {datetime: '16-07-2021', date: '16.07', weekday: 'Пт', type:''}, {datetime: '17-07-2021', date: '17.07', weekday: 'Сб', type:'weekend'}, {datetime: '18-07-2021', date: '18.07', weekday: 'Вс', type:'weekend'}]
+
+section.date-carousel
+    .date-carousel__wrapper
+        .date-carousel__slider.swiper-container-3
+            ul.swiper-wrapper
+                for i in weekDates
+                    li.date-carousel__item.swiper-slide
+                        a(href="#" target="_self" class="date-carousel__link " +i.type)
+                            b.date-carousel__day=i.weekday
+                            time(datetime="" +i.datetime).date-carousel__date=i.date
+            button(type="button").date-carousel__prev
+            button(type="button").date-carousel__next

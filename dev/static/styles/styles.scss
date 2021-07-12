@@ -3,6 +3,7 @@
 @import "utils/mixins";
 @import "utils/fonts";
 @import "utils/sprite";
+@import "utils/breadcrumbs";
 //@include sprites($spritesheet-sprites);
 
 html {
@@ -44,6 +45,18 @@ img {
 
 .body__dark {
     background-color: $black;
+}
+
+.main--news {
+    background-color: $lightwhite;
+}
+
+.main--watch {
+    background-color: $lightwhite;
+}
+
+.main--program {
+    background-color: $lightwhite;
 }
 
 input,

@@ -1,0 +1,12 @@
+section.news
+    .news__wrapper
+        h2.news__title Новости
+        
+        ul.news__list
+            +mediaItem('news__item', 'feed-image-1', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
+            +mediaItem('news__item', 'feed-image-2', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
+            li.news__banner
+                .news__banner-wrapper
+            +mediaItem('news__item', 'feed-image-3', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
+        button(type="button").news__more Ещё новости
+        a(href="#" target="_self").news__top.js-scroll-to-top Наверх

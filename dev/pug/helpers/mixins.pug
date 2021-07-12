@@ -19,21 +19,21 @@ mixin introItem(image, title, description, link, name)
             p.intro__description=description
             a(href="" +link target="_self").intro__btn=name
 
-mixin feedItem(image, description, link, views, datetime, date)
-    li.feed__item
-        a(href="" +link target="_self").feed__link
-            picture.feed__frame
+mixin mediaItem(type, image, description, link, views, datetime, date)
+    li(class="media-item " +type)
+        a(href="" +link target="_self").media-item__link
+            picture.media-item__frame
                 source(type="image/webp" media="(min-resolution: 384dpi), (-webkit-min-device-pixel-ratio: 3)" srcset="static/images/content/" +image +"@3x.webp 3x" sizes="100vw")
                 source(type="image/webp" media="(min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2)" srcset="static/images/content/" +image +"@2x.webp 2x" sizes="100vw")
                 source(type="image/webp" srcset="static/images/content/" +image +"@1x.webp" sizes="100vw")
                 source(media="(min-resolution: 384dpi), (-webkit-min-device-pixel-ratio: 3)" srcset="static/images/content/" +image +"@3x.jpg 3x" sizes="100vw")
                 source(media="(min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2)" srcset="static/images/content/" +image +"@2x.jpg 2x" sizes="100vw")
-                img(itemprop="image" src="static/images/content/" +image +"@1x.jpg" sizes="100vw").feed__frame-image
-            .feed__info
-                span.feed__info-views=views
-                time(datetime="" +datetime).feed__info-date=date
-            p.feed__description=description
-                
+                img(itemprop="image" src="static/images/content/" +image +"@1x.jpg" sizes="100vw").media-item__frame-image
+            .media-item__info
+                span.media-item__info-views=views
+                time(datetime="" +datetime).media-item__info-date=date
+            p.media-item__description=description
+
 mixin liveItem(image, link, datetime, time, title, description)
     li.live__item.swiper-slide
         a(href="" +link target="_self").live__link
@@ -47,3 +47,39 @@ mixin liveItem(image, link, datetime, time, title, description)
             time(datetime="" +datetime).live__time=time
             h3.live__name=title
             span.live__details=description
+
+mixin breadcrumb(levels)
+    .breadcrumbs(aria-label="breadcrumb")
+        ol.breadcrumbs__list(itemscope itemtype="http://schema.org/BreadcrumbList")
+            each level, index in levels
+                //- Index is zero based
+                - var count = index+1
+
+                li.breadcrumbs__item(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+                    a(href="#{level[1]}" aria-level!=count).breadcrumbs__link
+                        span(itemprop="name") #{level[0]}
+
+                        //- Don't show the divider on the last loop
+                    if count < levels.length
+                        i.breadcrumbs__symbol(aria-hidden="true").breadcrumbs__divider |
+                    meta(itemprop="position" content!=count)
+
+mixin progItem(link, datetime, time, image, mark, title, chapter, description)
+    li.program__item
+        a(href="" +link target="_self").program__link
+            time(datetime="" +datetime).program__time=time
+            .program__preview
+                div(class="program__mark " +mark)
+                    span.program__sticker.program__sticker--now сейчас
+                    span.program__sticker.program__sticker--next далее
+                picture.program__frame
+                    source(type="image/webp" media="(min-resolution: 384dpi), (-webkit-min-device-pixel-ratio: 3)" srcset="static/images/content/" +image +"@3x.webp 3x" sizes="100vw")
+                    source(type="image/webp" media="(min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2)" srcset="static/images/content/" +image +"@2x.webp 2x" sizes="100vw")
+                    source(type="image/webp" srcset="static/images/content/" +image +"@1x.webp" sizes="100vw")
+                    source(media="(min-resolution: 384dpi), (-webkit-min-device-pixel-ratio: 3)" srcset="static/images/content/" +image +"@3x.jpg 3x" sizes="100vw")
+                    source(media="(min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2)" srcset="static/images/content/" +image +"@2x.jpg 2x" sizes="100vw")
+                    img(itemprop="image" src="static/images/content/" +image +"@1x.jpg" sizes="100vw").program__frame-image
+            .program__info
+                h2.program__name=title
+                span.program__chapter=chapter
+                p.program__description=description

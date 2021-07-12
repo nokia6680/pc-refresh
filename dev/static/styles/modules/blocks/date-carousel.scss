@@ -1,0 +1,92 @@
+.date-carousel {
+    width: 100%;
+
+    margin-bottom: 1.25rem;
+
+    &__wrapper {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, center);
+
+        padding: 0 4rem;
+    }
+
+    &__slider {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    &__item {
+        @include flex-setting(column, center, center);
+
+        width: 40px;
+        height: 40px;
+    }
+
+    &__link {
+        @include flex-setting(column, center, center);
+
+        background-color: $blue;
+        text-decoration: none;
+        width: 40px;
+        height: 40px;
+
+        transition: 0.2s ease-in-out;
+
+        &.weekend {
+            background-color: $pink;
+        }
+
+        &:hover {
+            background-color: $purple;
+            transition: 0.2s ease-in-out;
+        }
+    }
+
+    .swiper-slide {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    &__day {
+        @include font-setting($main-font, 1.125rem, 1.125rem, 700, $white);
+        text-transform: uppercase;
+    }
+
+    &__date {
+        @include font-setting($main-font, 0.875rem, 1rem, 700, $white);
+    }
+
+    &__prev,
+    &__next {
+        background-color: transparent;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        border: none;
+
+        width: 16px;
+        height: 16px;
+
+        position: absolute;
+
+        cursor: pointer;
+        outline: none;
+
+        z-index: 4;
+
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &__prev {
+        background-image: url("data:image/svg+xml,%3Csvg width='12' height='14' viewBox='0 0 12 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-3.49691e-07 7L12 0.0717978L12 13.9282L-3.49691e-07 7Z' fill='%230F0D0D'/%3E%3C/svg%3E");
+        left: 1.625rem;
+    }
+
+    &__next {
+        background-image: url("data:image/svg+xml,%3Csvg width='12' height='14' viewBox='0 0 12 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 7L6.52532e-07 0.0717978L4.68497e-08 13.9282L12 7Z' fill='%230F0D0D'/%3E%3C/svg%3E%0A");
+        right: 1.625rem;
+    }
+}

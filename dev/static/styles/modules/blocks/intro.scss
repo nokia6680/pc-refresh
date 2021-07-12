@@ -121,12 +121,13 @@
     }
 
     .swiper-pagination-bullet {
-        width: 6.75px;
-        height: 6.75px;
+        width: 7px;
+        height: 7px;
 
         position: relative;
+        border-radius: 3.5px;
 
-        margin-right: 8.44px;
+        margin-right: 8px;
 
         background-color: $lightwhite;
         opacity: 0.6;
@@ -141,13 +142,13 @@
             position: absolute;
             content: '';
 
-            width: 11.26px;
-            height: 11.26px;
+            width: 11px;
+            height: 11px;
 
             background-color: transparent;
             border: 1px solid $lightwhite;
 
-            border-radius: 5.63px;
+            border-radius: 5.5px;
 
             top: -2px;
             left: -2px;

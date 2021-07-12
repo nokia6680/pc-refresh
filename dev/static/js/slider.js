@@ -22,3 +22,26 @@ const swiper1 = new Swiper('.swiper-container-1', {
 
     pagination: false,
 });
+
+const swiper2 = new Swiper('.swiper-container-2', {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    navigation: {
+        nextEl: '.trends__next',
+        prevEl: '.trends__prev',
+    },
+
+    pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+    },
+});
+
+const swiper3 = new Swiper('.swiper-container-3', {
+    slidesPerView: 4,
+    spaceBetween: 10,
+    navigation: {
+        nextEl: '.date-carousel__next',
+        prevEl: '.date-carousel__prev',
+    },
+});
