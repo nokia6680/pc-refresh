@@ -1,0 +1,13 @@
+.choose {
+    width: 100%;
+
+    @include flex-setting(column, flex-start, center);
+
+    padding: 1.5625rem 0 2rem 0;
+
+    background-color: $black;
+
+    &__upper {
+        display: none;
+    }
+}

@@ -3,32 +3,45 @@ block variables
 
 doctype html
 html(lang="ru-RU")
-	head
-		meta(charset="utf-8")
-		title #{title}
-		<!--[if IE]>
-		meta(http-equiv='X-UA-Compatible', content="IE = edge")
-		<![endif]-->
-		meta(name="viewport" content="width=device-width,initial-scale=1")
-		meta(name="keywords" content="")
-		link(rel="stylesheet" type='text/css' href="static/css/styles.css")
-		link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous")
-		link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css")
-	body.body.body--news
-		include ../modules/header/header		
-		main.main.main--news
-			+breadcrumb([["Главная ", "/index.html"], ["Новости ", "#"]])
-			include ../modules/blocks/news
-			include ../modules/blocks/tags
-			
-			.about-news
-				h2.about-news__title Самое интересное из мира комедии
-				p.about-news__description Новости – это место, где мы рассказываем все интересные вещи, которые нам удается узнать. Какие отсылки к массовой культуре показали в кадре, как понять намеки авторов, что происходит в жизни главных героев, десять фактов о персонаже, который промелькнул один раз на заднем плане – блог расскажет обо всем. Тут есть статьи на любые темы – ведь нужно еще больше информации о сериалах Paramount Comedy.
-			include ../modules/blocks/trends
-		include ../modules/footer/footer
-		script(src="static/js/vendor/jquery-3.3.1.min.js")
-		//script(src="static/js/vendor/libs.js")
-		script(src="static/js/main.js")
-		script(src="https://unpkg.com/swiper/swiper-bundle.js")
-		script(src="static/js/slider.js")
-		block script
+    head
+        meta(charset="utf-8")
+        title #{title}
+        <!--[if IE]>
+        meta(http-equiv='X-UA-Compatible', content="IE = edge")
+        <![endif]-->
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+        link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous")
+        link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css")
+    body.body.body--news
+        include ../modules/header/header		
+        main.main.main--news
+            +breadcrumb([["Главная ", "/index.html"], ["Новости ", "#"]])
+
+            section.feed#news
+                .feed__wrapper
+                    h2.feed__title Новости
+
+                    ul.feed__list
+                        +mediaItem('feed__item', 'feed-image-1', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
+                        +mediaItem('feed__item', 'feed-image-2', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
+                        li.feed__banner.line-banner
+                            .line-banner__wrapper
+                        +mediaItem('feed__item', 'feed-image-3', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
+                    button(type="button").feed__more.feed__more--pink Ещё новости
+                    a(href="#" target="_self").feed__top.js-scroll-to-top Наверх
+
+            include ../modules/blocks/tags
+
+            .about-news
+                h2.about-news__title Самое интересное из мира комедии
+                p.about-news__description Новости – это место, где мы рассказываем все интересные вещи, которые нам удается узнать. Какие отсылки к массовой культуре показали в кадре, как понять намеки авторов, что происходит в жизни главных героев, десять фактов о персонаже, который промелькнул один раз на заднем плане – блог расскажет обо всем. Тут есть статьи на любые темы – ведь нужно еще больше информации о сериалах Paramount Comedy.
+            include ../modules/blocks/trends
+        include ../modules/footer/footer
+        script(src="static/js/vendor/jquery-3.3.1.min.js")
+        //script(src="static/js/vendor/libs.js")
+        script(src="static/js/main.js")
+        script(src="https://unpkg.com/swiper/swiper-bundle.js")
+        script(src="static/js/slider.js")
+        block script

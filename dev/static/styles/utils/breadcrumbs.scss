@@ -13,8 +13,10 @@
 
     &__item {
         width: auto;
+        height: auto;
         margin-right: 0.25rem;
         position: relative;
+        @include flex-setting(row, flex-start, center);
     }
 
     &__link {

@@ -1,0 +1,7 @@
+- var naviLinks = [{name: 'Приют', link: '#chapter-1'}, {name: 'Пульс', link: '#chapter-2'}, {name: 'В тени', link: '#'}, {name: 'Поле в Англии', link: '#'}, {name: 'Ведьма', link: '#'}, {name: 'Суспирия', link: '#'}, {name: 'Одержимая', link: '#'}, {name: 'Дело №39', link: '#'}, {name: 'Ребёнок Розмари', link: '#'}, {name: 'Омен', link: '#'}, {name: 'Изгоняющий дьявола', link: '#'}, {name: 'Другие ипостаси', link: '#'}]
+
+<!--Article Navigation-->
+ul.article__navigation
+    for i in naviLinks
+        li.article__navigation-item
+            a(href="" +i.link target="_self").article__navigation-anchor=i.name

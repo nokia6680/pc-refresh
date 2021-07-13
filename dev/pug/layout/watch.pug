@@ -20,23 +20,25 @@ html(lang="ru-RU")
             section.watch
                 .watch__upper
                     +breadcrumb([["Главная ", "/index.html"], ["Что посмотреть? ", "#"]])
-                    
+
                     .watch__info
                         h1.watch__title Что посмотреть из стоящего кино и сериалов?
                         ul.watch__cats
                             for i in watchList
                                 li.watch__tag
                                     a(href="" +i.link target="_self").watch__tag-link=i.name
-                .watch__main
-                    h2.watch__subtitle Что посмотреть?
-                    ul.watch__list
-                        +mediaItem('watch__item', 'feed-image-1', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
-                        li.watch__banner
-                            .watch__banner-wrapper
-                        +mediaItem('watch__item', 'feed-image-2', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
-                        +mediaItem('watch__item', 'feed-image-3', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
-                    button(type="button").watch__more Eщё подборки
-                    a(href="#" target="_self").watch__top.js-scroll-to-top Наверх
+
+            section.feed#watch
+                .feed__wrapper
+                    h2.feed__title Что посмотреть?
+                    ul.feed__list
+                        +mediaItem('feed__item', 'feed-image-1', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
+                        li.feed__banner.line-banner
+                            .line-banner__wrapper
+                        +mediaItem('feed__item', 'feed-image-2', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
+                        +mediaItem('feed__item', 'feed-image-3', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
+                    button(type="button").feed__more.feed__more--blue Eщё подборки
+                    a(href="#" target="_self").feed__top.js-scroll-to-top Наверх
         include ../modules/footer/footer
         script(src="static/js/vendor/jquery-3.3.1.min.js")
         //script(src="static/js/vendor/libs.js")

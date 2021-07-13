@@ -115,7 +115,13 @@
     }
 
     &__description {
-        @include font-setting($main-font, 0.75rem, 0.875rem, 325, $lightwhite);
+        @include font-setting($main-font, 0.75rem, 0.875rem, 325, $black);
         text-align: left;
+    }
+
+    &.light {
+        .media-item__description {
+            color: $lightwhite;
+        }
     }
 }

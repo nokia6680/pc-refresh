@@ -1,0 +1,11 @@
+.aside {
+    width: 100%;
+
+    @include flex-setting(column, flex-start, center);
+
+    margin-bottom: 2.5rem;
+
+    &__banner {
+        margin-bottom: 0;
+    }
+}
