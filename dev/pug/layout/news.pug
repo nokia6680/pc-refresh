@@ -19,11 +19,11 @@ html(lang="ru-RU")
         main.main.main--news
             +breadcrumb([["Главная ", "/index.html"], ["Новости ", "#"]])
 
-            section.feed#news
+            section.feed.feed--news#news
                 .feed__wrapper
                     h2.feed__title Новости
 
-                    ul.feed__list
+                    ul.feed__list.feed__list--news
                         +mediaItem('feed__item', 'feed-image-1', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
                         +mediaItem('feed__item', 'feed-image-2', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
                         li.feed__banner.line-banner

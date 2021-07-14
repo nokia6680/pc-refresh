@@ -26,6 +26,7 @@
     }
 
     &__symbol {
+        margin-left: 0.25rem;
         font-style: normal;
         @include font-setting($main-font, 0.625rem, 0.6875rem, 500, $black);
     }

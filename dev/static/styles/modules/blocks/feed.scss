@@ -3,9 +3,15 @@
 
     padding: 0 0.9375rem;
 
-    &--index {
-        padding-bottom: 2.125rem;
+    &--news {
+        margin-bottom: 1.25rem;
+    }
 
+    &--watch {
+        margin-bottom: 2.125rem;
+    }
+
+    &--index {
         .feed__title {
             font-size: 1rem;
             line-height: 1.1875rem;
@@ -90,6 +96,11 @@
         margin-bottom: 2.125rem;
 
         gap: 2.125rem;
+
+        &--news,
+        &--watch {
+            gap: 1.25rem;
+        }
 
         &--theme,
         &--fresh,
@@ -237,6 +248,16 @@
     @supports not (gap: 0.875rem) {
         .feed__item {
             margin-bottom: 0.875rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    @supports not (gap: 1.25rem) {
+        .feed__item {
+            margin-bottom: 1.25rem;
 
             &:last-child {
                 margin-bottom: 0;
