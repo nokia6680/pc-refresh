@@ -77,7 +77,8 @@
     }
 
     &__name {
-        @include font-setting($main-font, 1rem, 1.1875rem, 700, $black);
+        @include font-setting($main-font, 1rem, 1.1875, 700, $black);
+        @include fluidFontSize(1rem, 1.375rem, 20rem, 25.875rem, 1rem);
         text-transform: uppercase;
         text-align: center;
         margin-bottom: 0.5rem;
@@ -90,7 +91,8 @@
 
         &-views,
         &-date {
-            @include font-setting($main-font, 0.6875rem, 0.8175rem, 325, $black);
+            @include font-setting($main-font, 0.6875rem, 1.181818, 325, $black);
+            @include fluidFontSize(0.6875rem, 0.8125rem, 20rem, 25.875rem, 0.6875rem);
             position: relative;
         }
 
@@ -147,12 +149,14 @@
     }
 
     &__start {
-        @include font-setting($main-font, 0.75rem, 0.875rem, 500, #000);
+        @include font-setting($main-font, 0.75rem, 1.16666rem, 500, #000);
+        @include fluidFontSize(0.75rem, 1rem, 20rem, 25.875rem, 0.75rem);
         margin-bottom: 0.9375rem;
     }
 
     &__description {
-        @include font-setting($main-font, 0.75rem, 0.875rem, 325, #000);
+        @include font-setting($main-font, 0.75rem, 1.16666, 325, #000);
+        @include fluidFontSize(0.75rem, 1rem, 20rem, 25.875rem, 1rem);
         margin-bottom: 0.9375rem;
     }
 
@@ -168,7 +172,8 @@
         }
 
         &-anchor {
-            @include font-setting($main-font, 0.875rem, 1.5rem, 700, #000);
+            @include font-setting($main-font, 0.875rem, 1.714285714285714, 700, #000);
+            @include fluidFontSize(0.875rem, 1.125rem, 20rem, 25.875rem, 0.875rem);
             text-decoration: none;
             text-align: left;
             transition: 0.2s ease-in;
@@ -211,7 +216,8 @@
     }
 
     &__title {
-        @include font-setting($main-font, 1rem, 1.1875rem, 700, $black);
+        @include font-setting($main-font, 1rem, 1.1875, 700, $black);
+        @include fluidFontSize(1rem, 1.25rem, 20rem, 25.875rem, 1rem);
         text-transform: uppercase;
         text-align: center;
         align-self: flex-start;
@@ -252,12 +258,14 @@
         }
 
         &-name {
-            @include font-setting($main-font, 0.625rem, 0.75rem, 325, $thingray);
+            @include font-setting($main-font, 0.625rem, 1.2, 325, $thingray);
+            @include fluidFontSize(0.625rem, 0.875rem, 20rem, 25.875rem, 0.625rem);
             margin-bottom: 0.125rem;
         }
 
         &-data {
-            @include font-setting($main-font, 0.75rem, 0.875rem, 325, $black);
+            @include font-setting($main-font, 0.75rem, 1.16666rem, 325, $black);
+            @include fluidFontSize(0.75rem, 1rem, 20rem, 25.875rem, 0.75rem)
         }
     }
 
@@ -272,7 +280,8 @@
     }
 
     &__subtitle {
-        @include font-setting($main-font, 0.875rem, 1.0625rem, 700, #000);
+        @include font-setting($main-font, 0.875rem, 1.214285714285714, 700, #000);
+        @include fluidFontSize(0.875rem, 1.125rem, 20rem, 25.875rem, 0.875rem)
         margin-bottom: 0.9375rem;
         text-align: left;
         align-self: flex-start;
@@ -329,6 +338,14 @@
 
             width: 100%;
             height: 100%;
+        }
+    }
+}
+
+@include min-screen(375px) {
+    .article {
+        &__wrapper {
+            padding-top: 5.375rem;
         }
     }
 }

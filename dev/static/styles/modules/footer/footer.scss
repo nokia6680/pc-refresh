@@ -15,7 +15,8 @@
         position: relative;
 
         @include flex-setting(column, center, center);
-        @include font-setting($main-font, 1.125rem, 1.375rem, 700, $black);
+        @include font-setting($main-font, 1.125rem, 1.222, 700, $black);
+        @include fluidFontSize(1.125rem, 1.375rem, 20rem, 25.875rem, 1.125rem);
 
         text-decoration: none;
         text-transform: uppercase;
@@ -75,7 +76,8 @@
 
         &-age {
             @include flex-setting(column, center, center);
-            @include font-setting($main-font, 1.25rem, 1.5rem, 900, $black);
+            @include font-setting($main-font, 1.25rem, 1.2, 900, $black);
+            @include fluidFontSize(1.25rem, 1.5rem, 20rem, 25.875rem, 1.25rem);
 
             padding: 0.1875rem 0.4375rem 0.1875rem 0.6875rem;
             background-color: $lightwhite;
@@ -129,17 +131,18 @@
             .fa-facebook-f::before {
               position: absolute;
               content: '\f39e';
-              font-size: 1.125rem;
+              @include fluidFontSize(1.125rem, 1.375rem, 20rem, 25.875rem, 1.125rem);
               color: $black;
               top: 50%;
               left: 50%;
               transform: translate(-50%, -50%);
+
             }
 
             .fa-vk::before {
               position: absolute;
               content: '\f189';
-              font-size: 1.125rem;
+              @include fluidFontSize(1.125rem, 1.375rem, 20rem, 25.875rem, 1.125rem);
               color: $black;
               top: 50%;
               left: 50%;
@@ -149,7 +152,7 @@
             .fa-instagram::before {
               position: absolute;
               content: '\f16d';
-              font-size: 1.125rem;
+              @include fluidFontSize(1.125rem, 1.375rem, 20rem, 25.875rem, 1.125rem);
               color: $black;
               top: 50%;
               left: 50%;
@@ -159,7 +162,7 @@
             .fa-odnoklassniki::before {
               position: absolute;
               content: '\f263';
-              font-size: 1.125rem;
+              @include fluidFontSize(1.125rem, 1.375rem, 20rem, 25.875rem, 1.125rem);
               color: $black;
               top: 50%;
               left: 50%;
@@ -169,7 +172,7 @@
             .fa-youtube::before {
               position: absolute;
               content: '\f167';
-              font-size: 1.125rem;
+              @include fluidFontSize(1.125rem, 1.375rem, 20rem, 25.875rem, 1.125rem);
               color: $black;
               top: 50%;
               left: 50%;
@@ -193,8 +196,8 @@
 
         &-link {
             @include flex-setting(column, center, center);
-            @include font-setting($main-font, 1.125rem, 1.375rem, 700, $lightwhite);
-
+            @include font-setting($main-font, 1.125rem, 1.2, 700, $lightwhite);
+            @include fluidFontSize(1.125rem, 1.375rem, 20rem, 25.875rem, 1.125rem);
             text-decoration: none;
             text-transform: uppercase;
 
@@ -245,8 +248,8 @@
 
         &-link {
             display: inline-flex;
-            @include font-setting($main-font, 0.6875rem, 0.8125rem, 700, $lightwhite);
-
+            @include font-setting($main-font, 0.6875rem, 1.181818, 700, $lightwhite);
+            @include fluidFontSize(0.6875rem, 0.875rem, 20rem, 25.875rem, 0.6875rem);
             text-transform: uppercase;
             text-decoration: none;
             transition: 0.2s linear;
@@ -263,7 +266,8 @@
     }
 
     &__copy {
-        @include font-setting($main-font, 0.5rem, 0.625rem, 325, #fff);
+        @include font-setting($main-font, 0.5rem, 1.25, 325, #fff);
+        @include fluidFontSize(0.5rem, 0.6875rem, 20rem, 25.875rem, 0.5rem);
         text-transform: uppercase;
     }
 }

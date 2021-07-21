@@ -45,3 +45,14 @@ const swiper3 = new Swiper('.swiper-container-3', {
         prevEl: '.date-carousel__prev',
     },
 });
+
+const swiper4 = new Swiper('.swiper-container-4', {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    navigation: {
+        nextEl: '.starring__next',
+        prevEl: '.starring__prev',
+    },
+
+    pagination: false,
+});

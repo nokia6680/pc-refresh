@@ -11,7 +11,8 @@
     }
 
     &__title {
-        @include font-setting($main-font, 1.125rem, 1.375rem, 700, $black);
+        @include font-setting($main-font, 1.125rem, 1.222, 700, $black);
+        @include fluidFontSize(1.125rem, 1.375rem, 20rem, 25.875rem, 1.125rem);
         text-transform: uppercase;
         text-align: center;
         margin-bottom: 0.8125rem;

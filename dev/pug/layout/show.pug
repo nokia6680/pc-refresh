@@ -1,0 +1,91 @@
+include ../helpers/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        title #{title}
+        <!--[if IE]>
+        meta(http-equiv='X-UA-Compatible', content="IE = edge")
+        <![endif]-->
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+        link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous")
+        link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css")
+    body.body.body--watch
+        include ../modules/header/header		
+        main.main.main--show
+            article.show
+                header.show__header
+                    +breadcrumb([["Главная ", "/index.html"], ["Сериалы ", "/series.html"], ["Сообщество ", "#"]])
+                    h1.show__name Сообщество
+                    
+                    .line-banner
+                        .line-banner__wrapper
+                section.show__body
+                    picture.show__frame
+                        source(type="image/webp" media="(min-resolution: 384dpi), (-webkit-min-device-pixel-ratio: 3)" srcset="static/images/content/article-intro@3x.webp 3x" sizes="100vw")
+                        source(type="image/webp" media="(min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2)" srcset="static/images/content/article-intro@2x.webp 2x" sizes="100vw")
+                        source(type="image/webp" srcset="static/images/content/article-intro@1x.webp" sizes="100vw")
+                        source(media="(min-resolution: 384dpi), (-webkit-min-device-pixel-ratio: 3)" srcset="static/images/content/article-intro@3x.jpg 3x" sizes="100vw")
+                        source(media="(min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2)" srcset="static/images/content/article-intro@2x.jpg 2x" sizes="100vw")
+                        img(itemprop="image" src="static/images/content/article-intro@1x.jpg" sizes="100vw").show__frame-image
+                    h2.show__title Описание шоу
+                    p.show__start Сообщество – сериал про весёлых однокурсников, которые вместе учатся, дружат и проходят через разные приключения! Только одному из них за шестьдесят, другая – разведёнка с детьми, третья в прошлом сидела на таблетках, и вся прочая компания не хуже. То есть не лучше. Мы хотели сказать «не лучше».
+                    p.show__description Место действия (и сюжетообразующая линия) «сообщества» - это учреждение дополнительного образования, куда неудачники (назовём вещи своими именами), которые по той или иной причине не смогли получить образование после школы, приходят, чтобы иметь хоть какую-то специальность.
+                    p.show__description Такая завязка придаёт «Сообществу» своего рода изюминку. Это не привычная нам «компания друзей, которые весело проводят время». Герои – взрослые люди, у них совершенно разные ценности и взгляды на жизнь, поэтому вместо традиционного наблюдения за приятелями, которые делают смешные штуки, мы (по крайней мере на протяжении первых сезонов) следим за медленно притирающимися друг к другу кусочками паззлов – и это разные паззлы.
+                    p.show__description Также своеобразен в сериале и юмор. Он строится не на череде шуток и гэгов, а на общей комической атмосфере, тонком, но ощутимом юморе ситуаций. Ощущение, что так на самом деле мог бы пошутить живой человек, во время просмотра не отпускает.
+        
+                    .show__trailer
+                        iframe(src="https://www.youtube.com/embed/k5FQ9hp7jk8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen).show__video
+                    .show__banner.line-banner
+                        .line-banner__wrapper
+                    .show__banner.quad-banner
+                        .quad-banner__wrapper
+                        .quad-banner__wrapper
+                            
+                section.show__schedule
+                    h2.show__schedule-title Расписание
+                    ul.show__schedule-list
+                        li.show__schedule-item
+                            time(datetime="20-07-2021 21:00").show__schedule-time Четверг 21:00 МСК
+                            span.show__schedule-info 5 сезон 1 серия
+                        li.show__schedule-item
+                            time(datetime="20-07-2021 21:00").show__schedule-time Четверг 21:00 МСК
+                            span.show__schedule-info 5 сезон 1 серия
+                        li.show__schedule-item
+                            time(datetime="20-07-2021 21:00").show__schedule-time Четверг 21:00 МСК
+                            span.show__schedule-info 5 сезон 1 серия
+                        li.show__schedule-item
+                            time(datetime="20-07-2021 21:00").show__schedule-time Четверг 21:00 МСК
+                            span.show__schedule-info 5 сезон 1 серия
+            section.show__feed.feed#show
+                .feed__wrapper
+                    h2.feed__title Новости шоу
+                        
+                    ul.feed__list
+                        +mediaItem('feed__item', 'feed-image-1', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
+                        +mediaItem('feed__item', 'feed-image-2', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
+                        +mediaItem('feed__item', 'feed-image-3', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
+                    button(type="button").feed__more.feed__more--pink Все новости шоу
+            section.starring
+                .starring__wrapper
+                    h2.starring__title Персонажи
+                    ul.starring__wrapper.swiper-container-4
+                        .swiper-wrapper
+                            +starItem('live-image-1', 'Джефф')
+                            +starItem('live-image-2', 'Безос')
+                            +starItem('live-image-1', 'Джефф')
+                        .starring__controls
+                            button(type="button").starring__prev
+                            button(type="button").starring__next
+                    a(href="#" target="_self").starring__top.js-scroll-to-top Наверх
+        include ../modules/footer/footer
+        script(src="static/js/vendor/jquery-3.3.1.min.js")
+        //script(src="static/js/vendor/libs.js")
+        script(src="static/js/main.js")
+        script(src="https://unpkg.com/swiper/swiper-bundle.js")
+        script(src="static/js/slider.js")
+        block script

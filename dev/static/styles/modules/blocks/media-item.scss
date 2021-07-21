@@ -68,7 +68,8 @@
             padding-left: 1.0625rem;
             position: relative;
 
-            @include font-setting($main-font, 0.6875rem, 0.8125rem, 325, $darkwhite);
+            @include font-setting($main-font, 0.6875rem, 1.181818, 325, $darkwhite);
+            @include fluidFontSize(0.6875rem, 0.8125rem, 20rem, 25.875rem, 0.6875rem);
 
             margin-right: 1.0625rem;
 
@@ -94,7 +95,8 @@
             padding-left: 0.875rem;
             position: relative;
 
-            @include font-setting($main-font, 0.6875rem, 0.8125rem, 325, $darkwhite);
+            @include font-setting($main-font, 0.6875rem, 1.181818, 325, $darkwhite);
+            @include fluidFontSize(0.6875rem, 0.8125rem, 20rem, 25.875rem, 0.6875rem);
 
             &::before {
                 position: absolute;
@@ -115,7 +117,8 @@
     }
 
     &__description {
-        @include font-setting($main-font, 0.75rem, 0.875rem, 325, $black);
+        @include font-setting($main-font, 0.6875rem, 1.181818, 325, $darkwhite);
+        @include fluidFontSize(0.6875rem, 0.875rem, 20rem, 25.875rem, 0.6875rem);
         text-align: left;
     }
 

@@ -49,7 +49,7 @@
     }
 
     &__day {
-        @include font-setting($main-font, 1.125rem, 1.125rem, 700, $white);
+        @include font-setting($main-font, 1.125rem, 1, 700, $white);
         text-transform: uppercase;
     }
 
@@ -88,5 +88,35 @@
     &__next {
         background-image: url("data:image/svg+xml,%3Csvg width='12' height='14' viewBox='0 0 12 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 7L6.52532e-07 0.0717978L4.68497e-08 13.9282L12 7Z' fill='%230F0D0D'/%3E%3C/svg%3E%0A");
         right: 1.625rem;
+    }
+}
+
+@include min-screen (375px) {
+    .date-carousel {
+        &__item {
+            width: 64px;
+            height: 64px;
+        }
+
+        &__link {
+            width: 64px;
+            height: 64px;
+        }
+
+        .swiper-slide {
+            width: 64px !important;
+            height: 64px !important;
+        }
+
+        &__day {
+            @include font-setting($main-font, 1.125rem, 1, 700, $white);
+            font-size: 1.375rem;
+            text-transform: uppercase;
+        }
+
+        &__date {
+            font-size: 1.125rem;
+            line-height: 1.25rem;
+        }
     }
 }

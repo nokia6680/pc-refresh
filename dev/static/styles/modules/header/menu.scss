@@ -43,9 +43,10 @@
     }
 
     &__title {
-        @include font-setting($main-font, 1rem, 1.1875rem, 700, $darkwhite);
-        text-transform: uppercase;
+        @include font-setting($main-font, 1rem, 1.1875, 700, $darkwhite);
+        @include fluidFontSize(1rem, 1.25rem, 20rem, 25.875rem, 1rem);
 
+        text-transform: uppercase;
         margin-bottom: 0.5625rem;
     }
 
@@ -72,7 +73,8 @@
         width: 100%;
         height: auto;
         display: inline-flex;
-        @include font-setting($main-font, 0.875rem, 1.0625rem, 700, $black);
+        @include font-setting($main-font, 0.875rem, 1.21428571428571, 700, $black);
+        @include fluidFontSize(0.875rem, 1.125rem, 20rem, 25.875rem, 0.875rem);
         text-decoration: none;
         text-transform: uppercase;
     }

@@ -47,7 +47,18 @@ mixin liveItem(image, link, datetime, time, title, description)
             time(datetime="" +datetime).live__time=time
             h3.live__name=title
             span.live__details=description
-
+            
+mixin starItem(image, title)
+    li.starring__item.swiper-slide
+        picture.starring__frame
+            source(type="image/webp" media="(min-resolution: 384dpi), (-webkit-min-device-pixel-ratio: 3)" srcset="static/images/content/" +image +"@3x.webp 3x" sizes="100vw")
+            source(type="image/webp" media="(min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2)" srcset="static/images/content/" +image +"@2x.webp 2x" sizes="100vw")
+            source(type="image/webp" srcset="static/images/content/" +image +"@1x.webp" sizes="100vw")
+            source(media="(min-resolution: 384dpi), (-webkit-min-device-pixel-ratio: 3)" srcset="static/images/content/" +image +"@3x.jpg 3x" sizes="100vw")
+            source(media="(min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2)" srcset="static/images/content/" +image +"@2x.jpg 2x" sizes="100vw")
+            img(itemprop="image" src="static/images/content/" +image +"@1x.jpg" sizes="100vw").starring__frame-image
+        h3.starring__name=title
+            
 mixin breadcrumb(levels)
     .breadcrumbs(aria-label="breadcrumb")
         ol.breadcrumbs__list(itemscope itemtype="http://schema.org/BreadcrumbList")
