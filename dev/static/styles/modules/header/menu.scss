@@ -79,3 +79,8 @@
         text-transform: uppercase;
     }
 }
+@include min-screen(768px) {
+    .menu {
+        display: none;
+    }
+}
