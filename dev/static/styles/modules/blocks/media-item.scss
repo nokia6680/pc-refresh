@@ -127,4 +127,48 @@
             color: $lightwhite;
         }
     }
+
+    &.dark {
+        .media-item__description {
+            color: $black;
+        }
+    }
+}
+
+@include min-screen(768px) {
+    .media-item {
+        &__info {
+            margin-bottom: 0.25rem;
+
+            &-views {
+                padding-left: 1.125rem;
+                margin-right: 0.625rem;
+
+                @include fluidFontSize(0.75rem, 0.875rem, 48rem, 85.3125rem, 0.75rem);
+                line-height: 1.16666;
+
+                &::before {
+                    width: 12.26px;
+                    height: 9.81px;
+                }
+            }
+
+            &-date {
+                padding-left: 1rem;
+
+                @include fluidFontSize(0.75rem, 0.875rem, 48rem, 85.3125rem, 0.75rem);
+                line-height: 1.16666;
+
+                &::before {
+                    width: 11.21px;
+                    height: 11.21px;
+                }
+            }
+        }
+
+        &__description {
+            @include fluidFontSize(0.875rem, 1.125rem, 48rem, 85.3125rem, 0.875rem);
+            line-height: 1.214285714285714;
+        }
+    }
 }

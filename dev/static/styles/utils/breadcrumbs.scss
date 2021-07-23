@@ -33,3 +33,25 @@
         @include fluidFontSize(0.625rem, 0.75rem, 20rem, 25.875rem, 0.625rem);
     }
 }
+
+
+@include min-screen(768px) {
+    .breadcrumbs {
+        padding: 1.375rem 3.375rem 0 3.375rem;
+        margin-bottom: 1.375rem;
+
+
+        &__item {
+            margin-right: 0.25rem;
+        }
+
+        &__link {
+            @include fluidFontSize(0.75rem, 1rem, 48rem, 85.3125rem, 0.75rem);
+        }
+
+        &__symbol {
+            margin-left: 0.25rem;
+            @include fluidFontSize(0.75rem, 1rem, 48rem, 85.3125rem, 0.75rem);
+        }
+    }
+}

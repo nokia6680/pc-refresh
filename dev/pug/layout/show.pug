@@ -66,21 +66,21 @@ html(lang="ru-RU")
                     h2.feed__title Новости шоу
                         
                     ul.feed__list
-                        +mediaItem('feed__item', 'feed-image-1', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
-                        +mediaItem('feed__item', 'feed-image-2', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
-                        +mediaItem('feed__item', 'feed-image-3', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
+                        +mediaItem('feed__item dark', 'feed-image-1', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
+                        +mediaItem('feed__item dark', 'feed-image-2', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
+                        +mediaItem('feed__item dark', 'feed-image-3', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
+                        +mediaItem('feed__item dark', 'feed-image-3', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
                     button(type="button").feed__more.feed__more--pink Все новости шоу
             section.starring
                 .starring__wrapper
                     h2.starring__title Персонажи
-                    ul.starring__wrapper.swiper-container-4
+                    ul.starring__slider.swiper-container-4
                         .swiper-wrapper
                             +starItem('live-image-1', 'Джефф')
                             +starItem('live-image-2', 'Безос')
                             +starItem('live-image-1', 'Джефф')
-                        .starring__controls
-                            button(type="button").starring__prev
-                            button(type="button").starring__next
+                        button(type="button").starring__prev
+                        button(type="button").starring__next
                     a(href="#" target="_self").starring__top.js-scroll-to-top Наверх
         include ../modules/footer/footer
         script(src="static/js/vendor/jquery-3.3.1.min.js")

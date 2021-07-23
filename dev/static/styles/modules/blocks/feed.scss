@@ -191,6 +191,12 @@
             background-color: $blue;
             margin-bottom: 1.25rem;
         }
+
+        &--down {
+            &::after {
+                background-image: url("data:image/svg+xml,%3Csvg width='11' height='17' viewBox='0 0 11 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.44167 12.9368L4.44167 -2.4365e-07L6.55837 -1.51127e-07L6.55837 12.9368L8.51331 10.9819L10.0157 12.4843L5.50002 17L0.9843 12.4843L2.48674 10.9819L4.44167 12.9368Z' fill='%230F0D0D'/%3E%3C/svg%3E");
+            }
+        }
     }
 
     &__top {
@@ -264,6 +270,166 @@
 
             &:last-child {
                 margin-bottom: 0;
+            }
+        }
+    }
+}
+
+@include min-screen(768px) {
+    .feed {
+        padding: 0 3.375rem;
+
+        &--news {
+            margin-bottom: 2.25rem;
+        }
+
+        &--watch {
+            padding-bottom: 2.125rem;
+        }
+
+        &--index {
+            .feed__wrapper {
+                padding-bottom: 1.875rem;
+            }
+            .feed__title {
+                @include fluidFontSize(1.375rem, 1.75rem, 48rem, 85.3125rem, 1.375rem);
+                line-height: 1.1818;
+                margin-bottom: 1.625rem;
+            }
+        }
+
+        &__title {
+            @include fluidFontSize(1.375rem, 1.75rem, 48rem, 85.3125rem, 1.375rem);
+            margin-bottom: 1.25rem;
+
+            &--purple,
+            &--pink,
+            &--blue {
+                @include fluidFontSize(1rem, 1.125rem, 48rem, 85.3125rem, 1rem);
+                line-height: 1.1875;
+
+                padding-bottom: 0.6875rem;
+                margin-bottom: 0.9375rem;
+            }
+
+            &--other {
+                @include fluidFontSize(1.375rem, 1.75rem, 48rem, 85.3125rem, 1.375rem);
+                line-height: 1.1818;
+
+                margin-bottom: 1.75rem;
+            }
+        }
+
+        &__list {
+            width: 100%;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 1.875rem;
+
+            gap: 1.875rem 1.25rem;
+
+            &--news,
+            &--watch {
+                gap: 2.5rem 1.25rem;
+            }
+
+            &--theme,
+            &--fresh,
+            &--popular,
+            &--other {
+                gap: 1.125rem;
+                margin-bottom: 0;
+                padding-bottom: 1.375rem;
+            }
+
+            &--theme {
+                border-bottom: 1px solid $thingray;
+            }
+
+            &--fresh {
+                border-bottom: 1px solid $darkpink;
+                margin-bottom: 1.5625rem;
+            }
+
+            &--popular {
+                border-bottom: 1px solid $blue;
+                margin-bottom: 1.5rem;
+            }
+
+            &--other {
+                border-bottom: 1px solid $lightwhite;
+            }
+        }
+
+        &__item {
+            width: 48.4848%;
+        }
+
+        &__more {
+            @include fluidFontSize(1.125rem, 1.375rem, 48rem, 85.33125rem, 1.125rem);
+            line-height: 1.1666;
+            padding: 0.375rem 3.25rem 0.3125rem 2.375rem;
+
+            &::after {
+                width: 13px;
+                height: 13px;
+
+                right: 2.125rem;
+            }
+
+            &--pink {
+                margin-bottom: 2.25rem;
+            }
+
+            &--blue {
+                margin-bottom: 2.25rem;
+            }
+
+            &--down {
+                &::after {
+                    width: 13px;
+                    height: 13px;
+                }
+            }
+        }
+
+        &__top {
+            @include fluidFontSize(1.125rem, 1.125rem, 48rem, 85.3125rem, 1.125rem);
+        }
+
+        &__banner {
+            margin-bottom: 0;
+        }
+
+        @supports not (gap: 2.125rem) {
+            .feed__item {
+                margin-bottom: 2.125rem;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        @supports not (gap: 0.875rem) {
+            .feed__item {
+                margin-bottom: 0.875rem;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        @supports not (gap: 1.25rem) {
+            .feed__item {
+                margin-bottom: 1.25rem;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
             }
         }
     }

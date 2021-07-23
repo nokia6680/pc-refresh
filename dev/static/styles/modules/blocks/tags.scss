@@ -62,3 +62,40 @@
         }
     }
 }
+
+@include min-screen(728px) {
+    .tags {
+        &__wrapper {
+            padding: 1.25rem 3.375rem 1.875rem 3.375rem;
+        }
+
+        &__title {
+            @include fluidFontSize(1.375rem, 1.75rem, 48rem, 85.3125rem, 1.375rem);
+            line-height: 1.181818;
+            margin-bottom: 1.875rem;
+        }
+
+        &__list {
+            justify-content: space-between;
+            gap: 1.375rem 2rem;
+        }
+
+        @supports not (gap: 1.375rem 2rem) {
+            .tags__wrapper {
+                padding-bottom: 1.875rem;
+            }
+
+            .tags__list {
+                &__item {
+                    margin-right: 2rem;
+                    margin-bottom: 1.375rem;
+                }
+            }
+        }
+
+        &__link {
+            @include fluidFontSize(1rem, 1.1875rem, 48rem, 85.3125rem, 1rem);
+            line-height: 1.1875;
+        }
+    }
+}

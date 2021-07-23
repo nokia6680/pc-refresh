@@ -15,3 +15,12 @@
         height: 100%;
     }
 }
+
+@include min-screen(768px) {
+    .line-banner {
+        width: 728px;
+        height: 90px;
+
+        margin-bottom: 1.25rem;
+    }
+}

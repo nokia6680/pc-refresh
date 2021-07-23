@@ -64,6 +64,12 @@ img {
     background-color: $lightwhite;
 }
 
+@include min-screen(768px) {
+    .main__banner {
+        display: none;
+    }
+}
+
 input,
 button,
 textarea,

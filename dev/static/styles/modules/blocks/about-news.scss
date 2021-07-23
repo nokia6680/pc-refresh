@@ -20,3 +20,21 @@
         text-align: left;
     }
 }
+
+@include min-screen(768px) {
+    .about-news {
+        padding: 1.875rem 3.375rem;
+
+        &__title {
+            @include fluidFontSize(1.375rem, 1.75rem, 48rem, 85.3125rem, 1.375rem);
+            line-height: 1.181818;
+            margin-bottom: 1.25rem;
+            align-self: center;
+        }
+
+        &__description {
+            @include fluidFontSize(0.875rem, 1.125rem, 48rem, 85.3125rem, 0.975rem);
+            line-height: 1.214285714285714;
+        }
+    }
+}

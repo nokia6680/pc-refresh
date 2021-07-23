@@ -29,7 +29,8 @@ html(lang="ru-RU")
                         li.feed__banner.line-banner
                             .line-banner__wrapper
                         +mediaItem('feed__item', 'feed-image-3', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
-                    button(type="button").feed__more.feed__more--pink Ещё новости
+                        +mediaItem('feed__item', 'feed-image-3', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
+                    button(type="button").feed__more.feed__more--pink.feed__more--down Ещё новости
                     a(href="#" target="_self").feed__top.js-scroll-to-top Наверх
 
             include ../modules/blocks/tags

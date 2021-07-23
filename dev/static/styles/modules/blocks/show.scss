@@ -39,7 +39,7 @@
     }
 
     &__name {
-        @include font-setting($main-font, 1.125rem, 1.22222222222rem, 700, $lightwhite);
+        @include font-setting($main-font, 1.125rem, 1.222, 700, $lightwhite);
         @include fluidFontSize(1.125rem, 1.375rem, 20rem, 25.875rem, 1.125rem);
 
         text-transform: uppercase;
@@ -220,6 +220,109 @@
 
         .feed__more {
             margin-bottom: 0;
+        }
+    }
+}
+
+@include min-screen(768px) {
+    .show {
+        &__header {
+            padding: 1.375rem 3.375rem 6rem 3.375rem;
+            margin-bottom: 1.4375rem;
+
+            .breadcrumbs {
+                margin-bottom: 1.375rem;
+            }
+
+            .line-banner {
+                bottom: 1.25rem;
+
+                width: 530px;
+                height: 65px;
+            }
+        }
+
+        &__name {
+            @include fluidFontSize(1.375rem, 1.75rem, 48rem, 85.3125rem, 1.375rem);
+            margin-bottom: 0;
+        }
+
+        &__body {
+            padding-left: 3.375rem;
+            padding-right: 3.375rem;
+        }
+
+        &__frame {
+            margin-bottom: 1.5rem;
+        }
+
+        &__title {
+            @include fluidFontSize(1.375rem, 1.75rem, 48rem, 85.3125rem, 1.375rem);
+            line-height: 1.1818;
+        }
+
+        &__start {
+            @include fluidFontSize(0.875rem, 1.125rem, 48rem, 85.3125rem, 0.875rem);
+            line-height: 1.21429;
+            margin-bottom: 1.25rem;
+        }
+
+        &__description {
+            @include fluidFontSize(0.875rem, 1.125rem, 48rem, 85.3125rem, 0.875rem);
+            line-height: 1.21429;
+            margin-bottom: 1.875rem;
+        }
+
+        &__trailer {
+            margin-bottom: 1.875rem;
+        }
+
+        &__banner {
+            &.quad-banner {
+                @include flex-setting(row, space-between, flex-start);
+                width: 620px;
+                height: 250px;
+
+                margin-bottom: 1.375rem;
+
+                .quad-banner__wrapper {
+                    width: 300px;
+                    height: 250px;
+                }
+            }
+        }
+
+        &__schedule {
+            padding-left: 3.375rem;
+            padding-right: 3.375rem;
+            padding-bottom: 3.125rem;
+
+            &-title {
+                @include fluidFontSize(1rem, 1.375rem, 48rem, 85.3125rem, 1rem);
+                line-height: 1.1875;
+
+                margin-bottom: 1.3125rem;
+                padding-top: 0.625rem;
+                padding-bottom: 0.625rem;
+            }
+
+            &-list {
+                align-self: flex-start;
+                width: 50%;
+            }
+
+            &-time {
+                @include fluidFontSize(1rem, 1.5rem, 48rem, 85.3125rem, 1rem);
+            }
+
+            &-info {
+                @include fluidFontSize(0.875rem, 1.375rem,  48rem, 85.3125rem, 0.875rem);
+            }
+        }
+
+        &__feed {
+            padding-top: 1.5rem;
+            padding-bottom: 2.5625rem;
         }
     }
 }

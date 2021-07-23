@@ -42,3 +42,55 @@
         }
     }
 }
+
+@include min-screen(768px) {
+    .about {
+        margin-bottom: 2.5rem;
+
+        &__wrapper {
+            width: 100%;
+
+            flex-direction: row;
+            justify-content: center;
+            align-items: stretch;
+
+            padding: 0 3.375rem;
+            background-color: transparent;
+        }
+
+        &__logo {
+            width: 35.454545%;
+            @include flex-setting(column, center, center);
+            background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(69,167,221,1) 50.2%, rgba(69,167,221,1) 60%, rgba(0,0,0,1) 60.2%, rgba(0,0,0,1) 70%, rgba(69,167,221,1) 70.2%, rgba(69,167,221,1) 80%, rgba(0,0,0,1) 80.2%, rgba(0,0,0,1) 90%, rgba(69,167,221,1) 90.2%, rgba(69,167,221,1) 100%);
+            background-position: 50% 50%;
+
+            &-img {
+                width: 88.92px;
+                height: 103px;
+                object-fit: contain;
+            }
+        }
+
+        &__info {
+            width: 64.545454%;
+            background-color: $orange;
+
+            padding: 1.0625rem 1.125rem 1.25rem 1.25rem;
+        }
+
+        &__title {
+            @include fluidFontSize(1.25rem, 2rem, 48rem, 85.3125rem, 1.25rem);
+            margin-bottom: 0.5rem;
+        }
+
+        &__description {
+            @include fluidFontSize(0.8125rem, 1.125rem, 48rem, 85.3125rem, 0.8125rem);
+            line-height: 1.230769230769231;
+            margin-bottom: 0.5rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

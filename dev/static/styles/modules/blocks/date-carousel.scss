@@ -120,3 +120,55 @@
         }
     }
 }
+
+@include min-screen(768px) {
+    .date-carousel {
+        margin-bottom: 2.8125rem;
+        padding: 0;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 614px;
+
+        &__wrapper {
+            padding: 0 3.75rem;
+            position: relative;
+        }
+
+        &__item {
+            width: 65px;
+            height: 65px;
+        }
+
+        &__link {
+            width: 65px;
+            height: 65px;
+        }
+
+        .swiper-slide {
+            width: 65px !important;
+            height: 65px !important;
+        }
+
+        &__day {
+            font-size: 1.625rem;
+        }
+
+        &__date {
+            font-size: 1.125rem;
+        }
+
+        &__prev,
+        &__next {
+            width: 18px;
+            height: 18px;
+        }
+
+        &__prev {
+            left: 0;
+        }
+
+        &__next {
+            right: 0;
+        }
+    }
+}
