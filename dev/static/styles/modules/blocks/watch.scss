@@ -12,3 +12,81 @@
         display: none;
     }
 }
+
+@include min-screen(768px) {
+    .watch {
+        background-color: $darkblack;
+
+        &__upper {
+            .breadcrumbs {
+                margin-bottom: 0.25rem;
+
+                &__link {
+                    color: $lightwhite;
+                }
+
+                &__divider {
+                    color: $lightwhite;
+                }
+            }
+        }
+
+        &__info {
+            background-color: $darkblack;
+            @include flex-setting(column, flex-start, center);
+            width: 100%;
+
+            padding: 1.125rem 3.375rem 1.6875rem 3.375rem;
+        }
+
+        &__title {
+            @include font-setting($main-font, 1.375rem, 1.1818, 700, $lightwhite);
+            @include fluidFontSize(1.375rem, 1.75rem, 48rem, 85.3125rem, 1.375rem);
+
+            margin-bottom: 1.4375rem;
+
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        &__cats {
+            @include flex-setting(row, center, center);
+            flex-wrap: wrap;
+            gap: 1.4375rem 2rem;
+        }
+
+        &__tag {
+            width: auto;
+            @include flex-setting(column, center, center);
+            margin: 0;
+
+            &-link {
+                width: 100%;
+                height: 100%;
+
+                @include font-setting($main-font, 1rem, 1.1875, 700, $lightwhite);
+                @include fluidFontSize(1rem, 1.125rem, 48rem, 85.3125rem, 1rem);
+
+                text-transform: uppercase;
+                text-decoration: none;
+                transition: 0.2s linear;
+
+                cursor: pointer;
+                outline: none;
+
+                &:hover,
+                &:active {
+                    color: $darkpink;
+                    transition: 0.2s linear;
+                }
+            }
+        }
+
+        @supports not (gap: 1.4375rem 2rem) {
+            .watch__tag {
+                margin-right: 2rem;
+                margin-bottom: 1.4375rem;
+            }
+        }
+    }
+}

@@ -8,4 +8,27 @@
     &__banner {
         margin-bottom: 0;
     }
+
+    .share {
+        display: none;
+    }
+}
+
+@include min-screen(768px) {
+    .aside {
+        margin-bottom: 2.3125rem;
+
+        &__banner {
+            display: none;
+        }
+
+        .share {
+            display: flex;
+
+            &__wrapper {
+                padding-top: 0;
+                margin-bottom: 0;
+            }
+        }
+    }
 }

@@ -1,0 +1,41 @@
+include ../helpers/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        title #{title}
+        <!--[if IE]>
+        meta(http-equiv='X-UA-Compatible', content="IE = edge")
+        <![endif]-->
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+        link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous")
+        link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css")
+    body.body.body--series
+        include ../modules/header/header		
+        main.main.main--series
+            +breadcrumb([["Главная ", "/index.html"], ["Сериалы ", "#"]])
+
+            section.series
+                .series__wrapper
+                    h1.series__title Сериалы
+                    ul.series__list
+                        +seriesItem('#', 'feed-image-1', 'Теория большого взрыва')
+                        +seriesItem('#', 'feed-image-2', 'Теория большого взрыва')
+                        .series__banner.line-banner
+                            .line-banner__wrapper
+                        +seriesItem('#', 'feed-image-3', 'Теория большого взрыва')
+                        +seriesItem('#', 'feed-image-1', 'Теория большого взрыва')
+                .series__about
+                    h2.series__subtitle Paramount Comedy
+                    p.series__description Сериалы – то, чем живет наш канал. Из бесконечного потока снимаемых по всему миру комедий мы выбираем те сериалы, которые больше всего нравятся критикам и зрителям. Любите ли Вы ситкомы или мультсериалы, семейные или острые шоу - на нашем канале точно есть то, что Вам понравится. В этом разделе Вы можете узнать подробности о сериалах, которые показывает Paramount Comedy. Кто кого играет, что и как снимали, в какой серии был тот-самый-момент и когда новый сезон – выбирай сериал и читай.
+        include ../modules/footer/footer
+        script(src="static/js/vendor/jquery-3.3.1.min.js")
+        //script(src="static/js/vendor/libs.js")
+        script(src="static/js/main.js")
+        script(src="https://unpkg.com/swiper/swiper-bundle.js")
+        script(src="static/js/slider.js")
+        block script

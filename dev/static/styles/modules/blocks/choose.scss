@@ -11,3 +11,17 @@
         display: none;
     }
 }
+
+@include min-screen(768px) {
+    .choose {
+        padding-top: 0;
+
+        &__upper {
+            display: flex;
+        }
+
+        &__feed {
+            padding-top: 1.875rem;
+        }
+    }
+}

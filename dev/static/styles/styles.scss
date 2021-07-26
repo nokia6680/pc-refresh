@@ -52,6 +52,17 @@ img {
     background-color: $lightwhite;
 }
 
+.main--series {
+    background-color: $lightblack;
+
+    .breadcrumbs {
+        &__link,
+        &__divider {
+            color: $lightwhite;
+        }
+    }
+}
+
 .main--watch {
     background-color: $lightwhite;
 }
