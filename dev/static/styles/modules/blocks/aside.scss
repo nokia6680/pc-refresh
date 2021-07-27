@@ -32,3 +32,49 @@
         }
     }
 }
+
+
+@include min-screen(1366px) {
+    .aside {
+        margin-bottom: 0;
+
+        position: absolute;
+
+        width: 18.30161054172767%;
+        top: 22.0625rem;
+        right: 11.20058565153734%;
+
+        &__feed {
+            padding: 0;
+        }
+
+        #fresh {
+            order: 1;
+        }
+
+        &__banner {
+            order: 2;
+            display: flex;
+
+            margin-bottom: 1.5625rem;
+
+            &.quad-banner {
+                width: 224px;
+                height: 186px;
+
+                .quad-banner__wrapper {
+                    width: inherit;
+                    height: inherit;
+                }
+            }
+        }
+
+        #popular {
+            order: 3;
+        }
+
+        .share {
+            display: none;
+        }
+    }
+}

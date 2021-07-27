@@ -37,3 +37,11 @@ header.header
             form(action="/search/" id="searchForm").header__form
                 input(type="text" name="q" id="searchField" placeholder="что ищем?").header__form-input
                 button(type="button").header__form-reset
+    .header__links
+        .header__slider.swiper-container7
+            .header__slider-wrapper
+                for i in seriesItem
+                    .header__slider-item
+                        a(href="" +i.link target="_self").header__slider-link=i.name
+        button(type="button").header__links-prev
+        button(type="button").header__links-next

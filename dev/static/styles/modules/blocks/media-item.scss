@@ -172,3 +172,43 @@
         }
     }
 }
+
+@include min-screen(1366px) {
+    .media-item {
+        &__frame {
+            margin-bottom: 0.625rem;
+        }
+        
+        &__info {
+            margin-bottom: 0.25rem;
+
+            &-views {
+                padding-left: 1.25rem;
+                margin-right: 1.125rem;
+
+                @include fluidFontSize(0.875rem, 1.125rem, 85.375rem, 104.9375rem, 0.875rem);
+                line-height: 1.21429;
+
+                &::before {
+                    width: 12.99px;
+                    height: 10.39px;
+                }
+            }
+
+            &-date {
+                @include fluidFontSize(0.875rem, 1.125rem, 85.375rem, 104.9375rem, 0.875rem);
+                line-height: 1.21429;
+
+                &::before {
+                    width: 11.88px;
+                    height: 11.88px;
+                }
+            }
+        }
+
+        &__description {
+            @include fluidFontSize(1.125rem, 1.375rem, 85.375rem, 104.9375rem, 1.125rem);
+            line-height: 1.222;
+        }
+    }
+}

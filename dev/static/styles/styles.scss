@@ -73,6 +73,7 @@ img {
 
 .main--article {
     background-color: $lightwhite;
+    position: relative;
 }
 
 @include min-screen(768px) {

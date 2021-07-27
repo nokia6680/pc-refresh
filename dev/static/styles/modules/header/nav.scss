@@ -174,7 +174,7 @@
         }
 
         &__link {
-            @include fluidFontSize(0.875rem, 1.125rem, 48rem, 85.375rem, 0.875rem);
+            @include fluidFontSize(0.875rem, 1.125rem, 48rem, 85.3125rem, 0.875rem);
             line-height: 1.2142857142857141;
             white-space: nowrap;
             padding: 0;
@@ -211,6 +211,50 @@
 
                     transition: all 0.3s ease-in;
                 }
+            }
+        }
+    }
+}
+
+@include min-screen(1366px) {
+    .nav {
+        &__item {
+            margin-right: 3.625rem;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        &__link {
+            @include fluidFontSize(1.125rem, 1.625rem, 85.375rem, 104.9375rem, 1.125rem);
+            line-height: 1.222;
+
+            padding-top: 0.3125rem;
+            padding-bottom: 0.3125rem;
+        }
+    }
+}
+
+@include min-screen(1680px) {
+    .nav {
+        &__item {
+            margin-right: 5.125rem;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        &__link {
+            font-size: 1.625rem;
+            line-height: 1.192307;
+
+            padding-top: 0.4375rem;
+            padding-bottom: 0.4375rem;
+
+            &::before {
+                height: 3px;
             }
         }
     }

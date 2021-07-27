@@ -12,6 +12,41 @@ const swiper = new Swiper('.swiper-container', {
     },
 });
 
+const swiper0 = new Swiper('.swiper-container7', {
+    slidesPerView: 'auto',
+    spaceBetween: 20,
+    slideClass: 'header__slider-item',
+    wrapperClass: 'header__slider-wrapper',
+    navigation: {
+        nextEl: '.header__links-next',
+        prevEl: '.header__links-prev',
+    },
+
+    breakpoints: {
+        1366: {
+            slidesPerView: 'auto',
+            spaceBetween: 20,
+            slideClass: 'header__slider-item',
+            wrapperClass: 'header__slider-wrapper',
+            navigation: {
+                nextEl: '.header__links-next',
+                prevEl: '.header__links-prev',
+            },
+        },
+
+        1680: {
+            slidesPerView: 'auto',
+            spaceBetween: 26,
+            slideClass: 'header__slider-item',
+            wrapperClass: 'header__slider-wrapper',
+            navigation: {
+                nextEl: '.header__links-next',
+                prevEl: '.header__links-prev',
+            },
+        },
+    }
+});
+
 // breakpoint where swiper will be destroyed
 // and switches to a dual-column layout
 const breakpoint = window.matchMedia('(min-width: 768px)');
@@ -65,6 +100,44 @@ const swiper2 = new Swiper('.swiper-container-2', {
         el: '.swiper-pagination',
         type: 'bullets',
     },
+
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            navigation: {
+                nextEl: '.trends__next',
+                prevEl: '.trends__prev',
+            },
+
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+            },
+        },
+
+        1366: {
+            slidesPerView: 2,
+            spaceBetween: 22,
+            navigation: {
+                nextEl: '.trends__next',
+                prevEl: '.trends__prev',
+            },
+
+            pagination: false,
+        },
+
+        1680: {
+            slidesPerView: 2,
+            spaceBetween: 36,
+            navigation: {
+                nextEl: '.trends__next',
+                prevEl: '.trends__prev',
+            },
+
+            pagination: false,
+        }
+    }
 });
 
 const swiper3 = new Swiper('.swiper-container-3', {

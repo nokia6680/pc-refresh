@@ -524,3 +524,153 @@
         }
     }
 }
+
+@include min-screen(1366px) {
+    .article {
+        &__wrapper {
+            padding-top: 6.0625rem;
+            padding-left: 11.20058565153734%;
+        }
+
+        &__intro {
+            max-width: 84.04099560761347%;
+
+            padding: 1rem 2.5625rem 1.875rem 2.5625rem;
+
+            top: -6.125rem;
+
+            order: 1;
+
+            .breadcrumbs {
+                margin-bottom: 1rem;
+            }
+        }
+
+        &__name {
+            font-size: 2.125rem;
+            line-height: 1.19444444;
+            margin-bottom: 0.5rem;
+        }
+
+        &__info {
+            &-views,
+            &-date {
+                @include fluidFontSize(0.875rem, 1.125rem, 85.375rem, 104.9375rem, 0.875rem);
+                line-height: 1.21428;
+            }
+
+            &-views {
+                padding-left: 1.5625rem;
+
+                &::before {
+                    width: 17.5px;
+                    height: 14px;
+                }
+            }
+
+            &-date {
+                padding-left: 1.375rem;
+
+                &::before {
+                    width: 17px;
+                    height: 18px;
+                }
+            }
+        }
+
+        &__preview {
+            padding-left: 0;
+            padding-right: 42.29183841714757%;
+            order: 2;
+        }
+
+        &__start {
+            @include fluidFontSize(1.125rem, 1.375rem, 85.375rem, 104.9375rem, 1.125rem);
+            line-height: 1.1666666;
+            margin-bottom: 1.4375rem;
+        }
+
+        &__description {
+            @include fluidFontSize(1.125rem, 1.375rem, 85.375rem, 104.9375rem, 1.125rem);
+            line-height: 1.222;
+            margin-bottom: 1.5rem;
+        }
+
+        /* navigation */
+
+        &__navigation {
+            margin-bottom: 1.125rem;
+
+            &-anchor {
+                @include fluidFontSize(1.125rem, 1.375rem, 85.375rem, 104.9375rem, 1.125rem);
+            }
+        }
+
+        &__chapter {
+            padding: 1.125rem 42.29183841714757% 0 0;
+            margin-bottom: 2.5rem;
+
+            order: 3;
+        }
+
+        &__title {
+            @include fluidFontSize(1.625rem, 2rem, 85.375rem, 104.9375rem, 1.625rem);
+            line-height: 1.192307;
+        }
+
+        &__frame {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Синопсис */
+        &__synopsis {
+            margin-bottom: 1.5rem;
+
+            &-item {
+                max-width: 82.85714285714286%;
+            }
+
+            &-name {
+                width: 42.41379310344828%;
+                @include fluidFontSize(1.125rem, 1.375rem, 85.375rem, 104.9375rem, 1.125rem);
+                line-height: 2.222222;
+            }
+
+            &-data {
+                width: 57.58620689655172%;
+                @include fluidFontSize(1.125rem, 1.375rem, 85.375rem, 104.9375rem, 1.125rem);
+                line-height: 2.222222;
+            }
+        }
+
+        &__subtitle {
+            font-size: 1.375rem;
+            line-height: 1.1818;
+        }
+
+        .share {
+            order: 4;
+            display: flex;
+            margin-bottom: 3.125rem;
+        }
+
+        &__banner {
+            margin: 0;
+            width: 100%;
+            order: 5;
+            margin-right: 42.29183841714757%;
+
+            &.line-banner {
+                width: 520px;
+                height: 64px;
+
+                margin-bottom: 3rem;
+            }
+        }
+
+        &__feed {
+            padding-right: 34.8722176422094%;
+            order: 6;
+        }
+    }
+}

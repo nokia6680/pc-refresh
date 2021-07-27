@@ -94,3 +94,83 @@
         }
     }
 }
+
+@include min-screen(1366px) {
+    .about {
+        margin-bottom: 3.75rem;
+
+        &__wrapper {
+            padding: 0 11.20058565153734%;
+        }
+
+        &__logo {
+            width: 31.69811320754717%;
+
+            &-img {
+                width: 128.99px;
+                height: 149.43px;
+            }
+        }
+
+        &__info {
+            width: 68.30188679245283%;
+
+            padding: 2.25rem 1.625rem 2rem 1.625rem;
+        }
+
+        &__title {
+            @include fluidFontSize(2rem, 2.5rem, 85.375rem, 104.9375rem, 2rem);
+            line-height: 1.1875;
+            margin-bottom: 1.25rem;
+        }
+
+        &__description {
+            @include fluidFontSize(1.125rem, 1.375rem, 85.375rem, 104.9375rem, 0.8125rem);
+            line-height: 1.222;
+            margin-bottom: 1rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+@include min-screen(1680px) {
+    .about {
+        margin-bottom: 3.125rem;
+
+        @include flex-setting(column, center, center);
+
+        &__wrapper {
+            padding: 0;
+            max-width: 1440px;
+        }
+
+        &__logo {
+            width: 31.66666%;
+
+            &-img {
+                width: 174.99px;
+                height: 202.72px;
+            }
+        }
+
+        &__info {
+            width: 68.333333%;
+
+            padding: 3rem 2.25rem 4rem 2.25rem;
+        }
+
+        &__title {
+            font-size: 2.25rem;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+        }
+
+        &__description {
+            font-size: 1.375rem;
+            line-height: 1.1818;
+        }
+    }
+}
