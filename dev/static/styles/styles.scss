@@ -82,6 +82,14 @@ img {
     }
 }
 
+@include min-screen(1366px) {
+    .main--program {
+        .breadcrumbs {
+            margin-bottom: 2.25rem;
+        }
+    }
+}
+
 input,
 button,
 textarea,

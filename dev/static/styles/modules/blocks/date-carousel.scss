@@ -89,6 +89,10 @@
         background-image: url("data:image/svg+xml,%3Csvg width='12' height='14' viewBox='0 0 12 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 7L6.52532e-07 0.0717978L4.68497e-08 13.9282L12 7Z' fill='%230F0D0D'/%3E%3C/svg%3E%0A");
         right: 1.625rem;
     }
+
+    &__banner {
+        display: none;
+    }
 }
 
 @include min-screen (375px) {
@@ -169,6 +173,98 @@
 
         &__next {
             right: 0;
+        }
+    }
+}
+
+@include min-screen(1366px) {
+    .date-carousel {
+        margin-bottom: 3.25rem;
+        max-width: 1060px;
+
+        &__wrapper {
+            padding: 0 5.625rem;
+            margin-bottom: 2.0625rem;
+        }
+
+        &__item {
+            width: 70px;
+            height: 70px;
+        }
+
+        &__link {
+            width: 70px;
+            height: 70px;
+        }
+
+        .swiper-slide {
+            width: 70px !important;
+            height: 70px !important;
+        }
+
+        &__prev,
+        &__next {
+            width: 28px;
+            height: 28px;
+        }
+
+        &__prev {
+            left: 1.25rem;
+        }
+
+        &__next {
+            right: 1.25rem;
+        }
+
+        &__banner {
+            display: flex;
+
+            &.quad-banner {
+                @include flex-setting(row, space-between, center);
+                width: 940px;
+                height: 250px;
+            }
+        }
+    }
+}
+
+@include min-screen(1680px) {
+    .date-carousel {
+        margin-bottom: 3.4375rem;
+        max-width: 1440px;
+
+        &__wrapper {
+            padding: 0 7.625rem;
+            margin-bottom: 2.5rem;
+        }
+
+        &__item {
+            width: 87px;
+            height: 87px;
+        }
+
+        &__link {
+            width: 87px;
+            height: 87px;
+        }
+
+        .swiper-slide {
+            width: 87px !important;
+            height: 87px !important;
+        }
+
+        &__prev,
+        &__next {
+            width: 34px;
+            height: 34px;
+        }
+
+        &__prev {
+            left: 1.75rem;
+        }
+
+        &__next {
+            right: 1.75rem;
         }
     }
 }

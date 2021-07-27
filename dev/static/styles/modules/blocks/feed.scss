@@ -527,7 +527,7 @@
                 @include fluidFontSize(1.75rem, 2.5rem, 85.375rem, 104.9375rem, 1.75rem);
                 line-height: 1.21428;
 
-                margin-bottom: 1.875rem;
+                margin-bottom: 1.5rem;
             }
         }
 
@@ -579,11 +579,12 @@
             }
 
             &--other {
+                gap: 1.875rem 0;
                 padding-bottom: 0;
                 margin-bottom: 0;
 
                 .feed__item {
-                    margin-bottom: 1.25rem;
+                    margin-bottom: 0;
                 }
             }
 

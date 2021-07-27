@@ -165,6 +165,24 @@ const swiper3 = new Swiper('.swiper-container-3', {
                 nextEl: '.date-carousel__next',
                 prevEl: '.date-carousel__prev',
             },
+        },
+
+        1366: {
+            slidesPerView: 10,
+            spaceBetween: 20,
+            navigation: {
+                nextEl: '.date-carousel__next',
+                prevEl: '.date-carousel__prev',
+            },
+        },
+
+        1680: {
+            slidesPerView: 10,
+            spaceBetween: 36,
+            navigation: {
+                nextEl: '.date-carousel__next',
+                prevEl: '.date-carousel__prev',
+            },
         }
     }
 });

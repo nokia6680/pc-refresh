@@ -25,3 +25,24 @@
         }
     }
 }
+
+
+@include min-screen(1366px) {
+    .choose {
+        padding-bottom: 4.5rem;
+        
+        &__feed {
+            padding-top: 1.375rem;
+        }
+    }
+}
+
+@include min-screen(1680px) {
+    .choose {
+        padding-bottom: 4.5rem;
+
+        &__feed {
+            padding-top: 1.75rem;
+        }
+    }
+}
