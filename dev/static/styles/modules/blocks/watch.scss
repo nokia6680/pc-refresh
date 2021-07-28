@@ -96,14 +96,11 @@
         &__upper {
             .breadcrumbs {
                 margin-bottom: 0.25rem;
+            }
 
-                &__link {
-                    color: $lightwhite;
-                }
-
-                &__divider {
-                    color: $lightwhite;
-                }
+            .watch__info {
+                padding-top: 0;
+                padding-bottom: 2.375rem;
             }
         }
 
@@ -144,15 +141,12 @@
     .watch {
         &__upper {
             .breadcrumbs {
-                margin-bottom: 0.25rem;
+                margin-bottom: 1.25rem;
+            }
 
-                &__link {
-                    color: $lightwhite;
-                }
-
-                &__divider {
-                    color: $lightwhite;
-                }
+            .watch__info {
+                padding-top: 0;
+                padding-bottom: 2.8125rem;
             }
         }
 

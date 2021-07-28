@@ -22,8 +22,12 @@ html(lang="ru-RU")
                     +breadcrumb([["Главная ", "/index.html"], ["Сериалы ", "/series.html"], ["Сообщество ", "#"]])
                     h1.show__name Сообщество
                     
-                    .line-banner
+                    .show__header-banner.line-banner
                         .line-banner__wrapper
+                    .show__header-banner.quad-banner
+                        .quad-banner__wrapper
+                        .quad-banner__wrapper
+                        .quad-banner__wrapper
                 section.show__body
                     picture.show__frame
                         source(type="image/webp" media="(min-resolution: 384dpi), (-webkit-min-device-pixel-ratio: 3)" srcset="static/images/content/article-intro@3x.webp 3x" sizes="100vw")
@@ -33,7 +37,7 @@ html(lang="ru-RU")
                         source(media="(min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2)" srcset="static/images/content/article-intro@2x.jpg 2x" sizes="100vw")
                         img(itemprop="image" src="static/images/content/article-intro@1x.jpg" sizes="100vw").show__frame-image
                     h2.show__title Описание шоу
-                    p.show__start Сообщество – сериал про весёлых однокурсников, которые вместе учатся, дружат и проходят через разные приключения! Только одному из них за шестьдесят, другая – разведёнка с детьми, третья в прошлом сидела на таблетках, и вся прочая компания не хуже. То есть не лучше. Мы хотели сказать «не лучше».
+                    b.show__start Сообщество – сериал про весёлых однокурсников, которые вместе учатся, дружат и проходят через разные приключения! Только одному из них за шестьдесят, другая – разведёнка с детьми, третья в прошлом сидела на таблетках, и вся прочая компания не хуже. То есть не лучше. Мы хотели сказать «не лучше».
                     p.show__description Место действия (и сюжетообразующая линия) «сообщества» - это учреждение дополнительного образования, куда неудачники (назовём вещи своими именами), которые по той или иной причине не смогли получить образование после школы, приходят, чтобы иметь хоть какую-то специальность.
                     p.show__description Такая завязка придаёт «Сообществу» своего рода изюминку. Это не привычная нам «компания друзей, которые весело проводят время». Герои – взрослые люди, у них совершенно разные ценности и взгляды на жизнь, поэтому вместо традиционного наблюдения за приятелями, которые делают смешные штуки, мы (по крайней мере на протяжении первых сезонов) следим за медленно притирающимися друг к другу кусочками паззлов – и это разные паззлы.
                     p.show__description Также своеобразен в сериале и юмор. Он строится не на череде шуток и гэгов, а на общей комической атмосфере, тонком, но ощутимом юморе ситуаций. Ощущение, что так на самом деле мог бы пошутить живой человек, во время просмотра не отпускает.
@@ -46,21 +50,21 @@ html(lang="ru-RU")
                         .quad-banner__wrapper
                         .quad-banner__wrapper
                             
-                section.show__schedule
-                    h2.show__schedule-title Расписание
-                    ul.show__schedule-list
-                        li.show__schedule-item
-                            time(datetime="20-07-2021 21:00").show__schedule-time Четверг 21:00 МСК
-                            span.show__schedule-info 5 сезон 1 серия
-                        li.show__schedule-item
-                            time(datetime="20-07-2021 21:00").show__schedule-time Четверг 21:00 МСК
-                            span.show__schedule-info 5 сезон 1 серия
-                        li.show__schedule-item
-                            time(datetime="20-07-2021 21:00").show__schedule-time Четверг 21:00 МСК
-                            span.show__schedule-info 5 сезон 1 серия
-                        li.show__schedule-item
-                            time(datetime="20-07-2021 21:00").show__schedule-time Четверг 21:00 МСК
-                            span.show__schedule-info 5 сезон 1 серия
+                    .show__schedule
+                        h2.show__schedule-title Расписание
+                        ul.show__schedule-list
+                            li.show__schedule-item
+                                time(datetime="20-07-2021 21:00").show__schedule-time Четверг 21:00 МСК
+                                span.show__schedule-info 5 сезон 1 серия
+                            li.show__schedule-item
+                                time(datetime="20-07-2021 21:00").show__schedule-time Четверг 21:00 МСК
+                                span.show__schedule-info 5 сезон 1 серия
+                            li.show__schedule-item
+                                time(datetime="20-07-2021 21:00").show__schedule-time Четверг 21:00 МСК
+                                span.show__schedule-info 5 сезон 1 серия
+                            li.show__schedule-item
+                                time(datetime="20-07-2021 21:00").show__schedule-time Четверг 21:00 МСК
+                                span.show__schedule-info 5 сезон 1 серия
             section.show__feed.feed#show
                 .feed__wrapper
                     h2.feed__title Новости шоу
@@ -79,8 +83,15 @@ html(lang="ru-RU")
                             +starItem('live-image-1', 'Джефф')
                             +starItem('live-image-2', 'Безос')
                             +starItem('live-image-1', 'Джефф')
-                        button(type="button").starring__prev
-                        button(type="button").starring__next
+                            +starItem('live-image-1', 'Джефф')
+                            +starItem('live-image-2', 'Безос')
+                            +starItem('live-image-1', 'Джефф')
+                            +starItem('live-image-1', 'Джефф')
+                            +starItem('live-image-2', 'Безос')
+                            +starItem('live-image-1', 'Джефф')
+                    button(type="button").starring__prev
+                    button(type="button").starring__next
+                    
                     a(href="#" target="_self").starring__top.js-scroll-to-top Наверх
         include ../modules/footer/footer
         script(src="static/js/vendor/jquery-3.3.1.min.js")

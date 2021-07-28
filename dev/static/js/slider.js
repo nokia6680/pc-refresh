@@ -212,6 +212,15 @@ const swiper4 = new Swiper('.swiper-container-4', {
                 nextEl: '.starring__next',
                 prevEl: '.starring__prev',
             },
+        },
+
+        1366: {
+            slidesPerView: 5,
+            spaceBetween: 20,
+            navigation: {
+                nextEl: '.starring__next',
+                prevEl: '.starring__prev',
+            },
         }
     },
 });
