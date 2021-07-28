@@ -3,39 +3,44 @@
 
     @include flex-setting(column, flex-start, center);
 
+
     &__poster {
-        width: 100%;
-
+        padding-top: 26.5625%;
         position: relative;
-
+        width: 100%;
+        height: 0;
         overflow: hidden;
 
         &-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
             width: 100%;
             height: 100%;
-
-            object-fit: cover;
-
-            aspect-ratio: 16 / 4.25;
         }
     }
 
-    @supports not (aspect-ratio: 16 / 4.25) {
+    @supports (aspect-ratio: 16 / 4.25) {
         .article__poster {
-            padding-top: 26.5625%;
-            position: relative;
+            padding-top: 0;
+            height: 100%;
             width: 100%;
-            height: 0;
 
             &-image {
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
+                position: relative;
+                top: auto;
+                left: auto;
+                bottom: auto;
+                right: auto;
 
                 width: 100%;
                 height: 100%;
+                object-fit: cover;
+
+                aspect-ratio: 16 / 4.25;
             }
         }
     }
@@ -226,18 +231,22 @@
     }
 
     &__frame {
-        width: 100%;
+        padding-top: 56.25%;
         position: relative;
-
+        width: 100%;
+        height: 0;
+        overflow: hidden;
         margin-bottom: 0.9375rem;
 
-        overflow: hidden;
-
         &-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            aspect-ratio: 16 / 9;
 
             transform-origin: center;
             transition: 0.3s ease-in;
@@ -251,11 +260,14 @@
         @include flex-setting(column, flex-start, flex-start);
         margin-bottom: 0.9375rem;
 
-        gap: 0.625rem;
-
         &-item {
             width: auto;
             @include flex-setting(column, flex-start, flex-start);
+            margin-bottom: 0.625rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
         }
 
         &-name {
@@ -270,16 +282,6 @@
         }
     }
 
-    @supports not (gap: 0.625rem) {
-        &__synopsis-item {
-            margin-bottom: 0.625rem;
-
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
-    }
-
     &__subtitle {
         @include font-setting($main-font, 0.875rem, 1.214285714285714, 700, #000);
         @include fluidFontSize(0.875rem, 1.125rem, 20rem, 25.875rem, 0.875rem)
@@ -289,8 +291,10 @@
     }
 
     &__trailer {
-        width: 100%;
+        padding-top: 56.25%;
         position: relative;
+        width: 100%;
+        height: 0;
 
         overflow: hidden;
     }
@@ -299,46 +303,52 @@
         width: 100%;
         height: 100%;
 
-        object-fit: cover;
-        aspect-ratio: 16 / 9;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
     }
 
 
-    @supports not (aspect-ratio: 16 / 9) {
+    @supports (aspect-ratio: 16 / 9) {
         .article__frame {
-            padding-top: 56.25%;
-            position: relative;
             width: 100%;
-            height: 0;
+            height: 100%;
+            padding-top: 0;
 
             &-image {
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
+                position: relative;
+                top: auto;
+                left: auto;
+                bottom: auto;
+                right: auto;
 
                 width: 100%;
                 height: 100%;
+                object-fit: cover;
+                aspect-ratio: 16 / 9;
+
+                transform-origin: center;
+                transition: 0.3s ease-in;
             }
         }
 
         .article__trailer {
-            padding-top: 56.25%;
+            padding-top: 0;
             position: relative;
-            width: 100%;
-            height: 0;
+            height: 100%;
         }
 
         .article__video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            position: relative;
+            top: auto;
+            left: auto;
+            bottom: auto;
+            right: auto;
 
-            width: 100%;
-            height: 100%;
+            object-fit: cover;
+            aspect-ratio: 16 / 9;
         }
     }
 }
@@ -354,27 +364,15 @@
 @include min-screen(768px) {
     .article {
         &__poster {
-            &-image {
-                aspect-ratio: 16 / 3;
-            }
+            padding-top: 18.229166666666668%;
         }
 
-        @supports not (aspect-ratio: 16 / 3) {
+        @supports (aspect-ratio: 16 / 3) {
             .article__poster {
-                padding-top: 18.229166666666668%;
-                position: relative;
-                width: 100%;
-                height: 0;
+                padding-top: 0;
 
                 &-image {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-
-                    width: 100%;
-                    height: 100%;
+                    aspect-ratio: 16 / 3;
                 }
             }
         }
@@ -397,7 +395,7 @@
         }
 
         &__name {
-            @include fluidFontSize(1.5rem, 2.125rem, 48rem, 85.3125rem, 1.5rem);
+            @include fluidFontSize(1.5rem, 2.25rem, 48rem, 85.3125rem, 1.5rem);
             line-height: 1.2083333333;
             margin-bottom: 0.625rem;
         }
@@ -474,8 +472,6 @@
         &__synopsis {
             margin-bottom: 1.25rem;
 
-            gap: 0;
-
             &-item {
                 width: 100%;
                 max-width: 87.12%;
@@ -500,16 +496,6 @@
                 width: 57.2174%;
                 @include fluidFontSize(0.875rem, 1.125rem, 48rem, 85.3125rem, 0.875rem);
                 line-height: 2.571428;
-            }
-        }
-
-        @supports not (gap: 0) {
-            &__synopsis-item {
-                margin-bottom: 0;
-
-                &:last-child {
-                    margin-bottom: 0;
-                }
             }
         }
 
@@ -547,7 +533,7 @@
         }
 
         &__name {
-            font-size: 2.125rem;
+            font-size: 2.25rem;
             line-height: 1.19444444;
             margin-bottom: 0.5rem;
         }
@@ -671,6 +657,148 @@
         &__feed {
             padding-right: 34.8722176422094%;
             order: 6;
+        }
+    }
+}
+
+@include min-screen(1680px) {
+    .article {
+        &__wrapper {
+            padding-top: 8.3125rem;
+            padding-left: 0;
+            max-width: 1520px;
+        }
+
+        &__intro {
+            max-width: 100%;
+
+            padding: 1.0625rem 2.8125rem 1.625rem 2.8125rem;
+
+            top: -5.1875rem;
+
+            .breadcrumbs {
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        &__name {
+            font-size: 2.25rem;
+            margin-bottom: 0.625rem;
+        }
+
+        &__info {
+            &-views,
+            &-date {
+                font-size: 1.125rem;
+                line-height: 1.222;
+            }
+
+            &-views {
+                padding-left: 2rem;
+
+                &::before {
+                    width: 20.98px;
+                    height: 14px;
+                }
+            }
+
+            &-date {
+                padding-left: 1.625rem;
+
+                &::before {
+                    width: 19.16px;
+                    height: 16px;
+                    top: 48%;
+                }
+            }
+        }
+
+        &__preview {
+            padding-left: 2.5rem;
+            padding-right: 35%;
+        }
+
+        &__start {
+            font-size: 1.375rem;
+            line-height: 1.136363;
+            margin-bottom: 2.6875rem;
+        }
+
+        &__description {
+            font-size: 1.375rem;
+            line-height: 1.1818;
+            margin-bottom: 2.6875rem;
+        }
+
+        /* navigation */
+
+        &__navigation {
+            margin-bottom: 1rem;
+
+            &-anchor {
+                font-size: 1.375rem;
+                line-height: 2.5rem;
+            }
+        }
+
+        &__chapter {
+            padding: 1.375rem 35% 0 2.5rem;;
+        }
+
+        &__title {
+            font-size: 2rem;
+            line-height: 1.1875;
+            margin-bottom: 2.0625rem;
+        }
+
+        &__frame {
+            margin-bottom: 2.5rem;
+        }
+
+        /* Синопсис */
+        &__synopsis {
+            margin-bottom: 1.75rem;
+
+            &-item {
+                width: 100%;
+                max-width: 61.57112526539278%;
+            }
+
+            &-name {
+                font-size: 1.375rem;
+                line-height: 1.818181818181818;
+            }
+
+            &-data {
+                font-size: 1.375rem;
+                line-height: 1.818181818181818;
+            }
+        }
+
+        &__subtitle {
+            margin-bottom: 2.25rem;
+        }
+
+        .share {
+            order: 5;
+            margin-bottom: 2.5rem;
+        }
+
+        &__banner {
+            order: 4;
+            margin-right: 34%;
+
+            &.line-banner {
+                width: 728px;
+                height: 90px;
+
+                margin-bottom: 2.5rem;
+            }
+        }
+
+        &__feed {
+            padding-left: 2.5rem;
+            padding-right: 26.97368421052632%;
         }
     }
 }

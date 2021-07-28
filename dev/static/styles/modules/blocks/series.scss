@@ -10,6 +10,12 @@
         margin-bottom: 0.9375rem;
     }
 
+    &__banner {
+        &.quad-banner {
+            display: none;
+        }
+    }
+
     &__title {
         @include font-setting($main-font, 1.125rem, 1.222, 700, $lightwhite);
         @include fluidFontSize(1.125rem, 1.375rem, 20rem, 25.875rem, 1.125rem);
@@ -72,10 +78,17 @@
         .series__frame {
             width: 100%;
             position: relative;
+            padding-top: 0;
+            height: 100%;
             margin-bottom: 0.625rem;
             overflow: hidden;
 
             &-image {
+                position: relative;
+                top: auto;
+                left: auto;
+                bottom: auto;
+                right: auto;
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
@@ -112,6 +125,7 @@
         text-align: left;
     }
 }
+
 @include min-screen(768px) {
     .series {
         &__wrapper {
@@ -126,25 +140,36 @@
         }
 
         &__list {
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 1.5rem 1.25rem;
-        }
-        @supports not (gap: 1.5rem 1.25rem) {
-            .series__item {
-                margin-bottom: 1.5rem;
+            width: 100%;
+            align-items: start;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 1.25rem;
+            grid-row-gap: 1.5rem;
+
+            .series__banner {
+                grid-column-start: 1;
+                grid-column-end: 3;
+                grid-row-start: 3;
+                grid-row-end: 4;
+
+                &.line-banner {
+                    width: 520px;
+                    height: 60px;
+                }
             }
         }
 
         &__item {
-            width: 48.484848%;
-        }
-
-        &__banner {
-            order: 3;
             margin-bottom: 0;
+
+            &:nth-child(5),
+            &:nth-child(6),
+            &:nth-child(7),
+            &:nth-child(8),
+            &:last-child {
+                display: none;
+            }
         }
 
         &__name {
@@ -169,6 +194,7 @@
         }
     }
 }
+
 @include min-screen(1366px) {
     .series {
         &__wrapper {
@@ -183,21 +209,31 @@
         }
 
         &__list {
-            gap: 3.125rem 1.25rem;
-        }
-        @supports not (gap: 3.125rem 1.25rem) {
-            .series__item {
-                margin-bottom: 3.125rem;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-row-gap: 3.125rem;
+
+
+            .series__banner {
+                grid-column-start: 1;
+                grid-column-end: 4;
+                grid-row-start: 2;
+                grid-row-end: 3;
+
+                &.line-banner {
+                    width: 728px;
+                    height: 90px;
+                }
             }
         }
 
         &__item {
-            width: 32.07547169811321%;
-        }
-
-        &__banner {
-            order: 4;
-            margin-bottom: 0;
+            &:nth-child(5),
+            &:nth-child(6),
+            &:nth-child(7),
+            &:nth-child(8),
+            &:last-child {
+                display: flex;
+            }
         }
 
         &__name {
@@ -220,6 +256,60 @@
         &__description {
             @include fluidFontSize(1.125rem, 1.375rem, 85.375rem, 104.9375rem, 1.125rem);
             line-height: 1.222;
+        }
+    }
+}
+
+@include min-screen(1680px) {
+    .series {
+        &__wrapper {
+            max-width: 1440px;
+            padding: 0;
+            margin-bottom: 4.5rem;
+        }
+
+        &__banner {
+            &.quad-banner {
+                @include flex-setting(row, space-between, center);
+
+                width: 940px;
+                height: 250px;
+
+                margin-bottom: 3.125rem;
+            }
+        }
+
+        &__title {
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        &__list {
+            grid-column-gap: 2.25rem;
+            grid-row-gap: 2.5rem;
+        }
+
+        &__name {
+            font-size: 1.875rem;
+            line-height: 1.2;
+        }
+
+        &__about {
+            padding-left: 0;
+            padding-right: 0;
+            padding-bottom: 4.5rem;
+            max-width: 1440px;
+        }
+
+        &__subtitle {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 0.625rem;
+        }
+
+        &__description {
+            font-size: 1.375rem;
+            line-height: 1.1818;
         }
     }
 }

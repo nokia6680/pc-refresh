@@ -1,6 +1,7 @@
 const swiper = new Swiper('.swiper-container', {
     slidesPerView: 1,
     spaceBetween: 0,
+    slideClass: 'intro__item',
     navigation: {
         nextEl: '.intro__next',
         prevEl: '.intro__prev',

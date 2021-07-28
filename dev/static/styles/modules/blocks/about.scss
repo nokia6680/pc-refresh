@@ -59,7 +59,7 @@
         }
 
         &__logo {
-            width: 35.454545%;
+            width: 35.454545454545%;
             @include flex-setting(column, center, center);
             background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(69,167,221,1) 50.2%, rgba(69,167,221,1) 60%, rgba(0,0,0,1) 60.2%, rgba(0,0,0,1) 70%, rgba(69,167,221,1) 70.2%, rgba(69,167,221,1) 80%, rgba(0,0,0,1) 80.2%, rgba(0,0,0,1) 90%, rgba(69,167,221,1) 90.2%, rgba(69,167,221,1) 100%);
             background-position: 50% 50%;

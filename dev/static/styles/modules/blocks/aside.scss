@@ -78,3 +78,37 @@
         }
     }
 }
+
+@include min-screen(1680px) {
+    .aside {
+        width: 19.82142857142857%;
+        top: 28rem;
+        right: 7.142857142857143%;
+
+        &__banner {
+            margin-bottom: 2.5rem;
+
+            &.quad-banner {
+                width: 300px;
+                height: 250px;
+            }
+        }
+    }
+}
+
+@include min-screen(1920px) {
+    .aside {
+        width: 17.34375%;
+        top: 30.8125rem;
+        right: 12.5%;
+
+        &__banner {
+            margin-bottom: 2.5rem;
+
+            &.quad-banner {
+                width: 300px;
+                height: 250px;
+            }
+        }
+    }
+}

@@ -137,3 +137,15 @@
         }
     }
 }
+
+@include min-screen(1680px) {
+    .share {
+        padding-right: 35%;
+
+        &__title {
+            font-size: 2.25rem;
+            line-height: 1.194444;
+            margin-bottom: 1rem;
+        }
+    }
+}
