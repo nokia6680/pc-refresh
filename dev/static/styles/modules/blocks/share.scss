@@ -23,7 +23,6 @@
     &__list {
         width: auto;
         @include flex-setting(row, center, center);
-        gap: 1rem;
     }
 
     &__item {
@@ -33,6 +32,12 @@
         height: 42px;
 
         border-radius: 21px;
+
+        margin-right: 1rem;
+
+        &:last-child {
+            margin-right: 0;
+        }
     }
 
     &__link {

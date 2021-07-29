@@ -8,6 +8,7 @@
     padding-right: 0.9375rem;
 
     padding-top: 0.5625rem;
+    padding-bottom: 0.5625rem;
 
     box-shadow: inset 0px 2px 4px #DCD0C9;
 
@@ -55,6 +56,8 @@
         @include flex-setting(row, flex-start, center);
 
         flex-wrap: wrap;
+
+        gap: 0.5625rem 1.125rem;
     }
 
     &__item {
@@ -64,9 +67,6 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
-        margin-right: 1.125rem;
-        margin-bottom: 0.5625rem;
     }
 
     &__link {
@@ -78,7 +78,19 @@
         text-decoration: none;
         text-transform: uppercase;
     }
+
+    @supports not (aspect-ratio: 1 / 1) {
+        .menu {
+            padding-bottom: 0;
+
+            &__item {
+                margin-right: 1.125rem;
+                margin-bottom: 0.5625rem;
+            }
+        }
+    }
 }
+
 @include min-screen(768px) {
     .menu {
         display: none;
