@@ -1,0 +1,62 @@
+include ../helpers/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        title #{title}
+        <!--[if IE]>
+        meta(http-equiv='X-UA-Compatible', content="IE = edge")
+        <![endif]-->
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+        link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous")
+        link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css")
+    body.body
+        include ../modules/header/header
+        main.main.main--contacts
+            +breadcrumb([["Главная ", "/index.html"], ["Контакты ", "#"]])
+            section.contacts
+                h1.contacts__title Наши контакты
+                p.contacts__description Присылайте свои вопросы, отзывы, замечания и рекомендации на почтовый ящик Paramount Comedy: 
+                    a(href="mailto:inbox@pcomedy.ru" target="_blank").contacts__link inbox@pcomedy.ru
+                p.contacts__description По вопросам конкурсов Paramount Comedy и рассылки призов пишите на 
+                    a(href="mailto:inbox@pcomedy.ru" target="_blank").contacts__link inbox@pcomedy.ru
+                h2.contacts__subtitle Контакты ответственных лиц в России и СНГ:
+                ul.contacts__list
+                    li.contacts__item
+                        b.contacts__name Маркетинг в России и СНГ (промо-мероприятия, кросс-промо, участие в социальных проектах и пр): 
+                        p.contacts__description Талия Нуртдинова – Руководитель по маркетингу и развитию брендов (Head of Markt&Brand Dev RCIS)
+                        p.contacts__description E-mail: 
+                            a(href="mailto:taliya.nurtdinova@vimn.com" target="_blank").contacts__link taliya.nurtdinova@vimn.com
+                    li.contacts__item
+                        b.contacts__name Потребительская продукция, выдача лицензий на использование объектов интеллектуальной собственности Nickelodeon по России и СНГ:
+                        p.contacts__description Петя Тончева – Старший директор по дистрибуции и лицензированию в России, Грузии, Украине, странах Балтии и СНГ (Licensing Director, Russia & CIS)
+                        p.contacts__description E-mail: 
+                            a(href="mailto:petia.toncheva@vimn.com" target="_blank").contacts__link petia.toncheva@vimn.com
+                    li.contacts__item
+                        b.contacts__name PR-проекты (сотрудничество со СМИ, спецпроекты и пр.):
+                        p.contacts__description Максим Белкин – (PR-агентство PBN Hill+Knowlton Strategies)
+                        p.contacts__description Тел. 
+                            a(href="tel:+74957750077" target="_blank").contacts__link 7 (495) 775-00-77
+                        p.contacts__description E-mail: 
+                            a(href="mailto:maxim.belkin@hkstrategies.com" target="_blank").contacts__link maxim.belkin@hkstrategies.com
+                    li.contacts__item
+                        b.contacts__name Поддержка сайта Paramountcomedy.ru:
+                        p.contacts__description Полина Пономарева - Диджитал-продюсер (Digital Producer)
+                        p.contacts__description E-mail: 
+                            a(href="mailto:polina.ponomareva@vimncontractor.com" target="_blank").contacts__link polina.ponomareva@vimncontractor.com
+                    li.contacts__item
+                        b.contacts__name Размещение рекламы и коммерческие спонсорские проекты:
+                        p.contacts__description Артем Арефьев- Директор по развитию бизнеса и продажам рекламы (Head of Ad&Sp Projects Sales)
+                        p.contacts__description E-mail: 
+                            a(href="mailto:artem.arefiev@vimn.com" target="_blank").contacts__link artem.arefiev@vimn.com
+        include ../modules/footer/footer
+        script(src="static/js/vendor/jquery-3.3.1.min.js")
+        //script(src="static/js/vendor/libs.js")
+        script(src="static/js/main.js")
+        script(src="https://unpkg.com/swiper/swiper-bundle.js")
+        script(src="static/js/slider.js")
+        block script

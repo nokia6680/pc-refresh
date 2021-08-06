@@ -20,8 +20,8 @@
     }
 
     &__link {
-        @include font-setting($main-font, 0.5625rem, 1.222, 500, $black);
-        @include fluidFontSize(0.5625rem, 0.75rem, 20rem, 25.875rem, 0.5625rem);
+        @include font-setting($main-font, 0.625rem, 1.222, 500, $black);
+        @include fluidFontSize(0.625rem, 0.75rem, 20rem, 25.875rem, 0.625rem);
 
         text-decoration: none;
     }

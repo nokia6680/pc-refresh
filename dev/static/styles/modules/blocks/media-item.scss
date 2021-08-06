@@ -25,7 +25,6 @@
         margin-bottom: 0.5rem;
         width: 100%;
         height: 0;
-
         overflow: hidden;
 
         &-image {
@@ -75,8 +74,8 @@
             padding-left: 1.0625rem;
             position: relative;
 
-            @include font-setting($main-font, 0.6875rem, 1.181818, 325, $darkwhite);
-            @include fluidFontSize(0.6875rem, 0.8125rem, 20rem, 25.875rem, 0.6875rem);
+            @include font-setting($main-font, 0.75rem, 1.181818, 400, $darkwhite);
+            @include fluidFontSize(0.75rem, 0.8875rem, 20rem, 25.875rem, 0.75rem);
 
             margin-right: 1.0625rem;
 
@@ -124,8 +123,8 @@
     }
 
     &__description {
-        @include font-setting($main-font, 0.6875rem, 1.181818, 325, $black);
-        @include fluidFontSize(0.6875rem, 0.875rem, 20rem, 25.875rem, 0.6875rem);
+        @include font-setting($main-font, 1rem, 1.1875, 400, $black);
+        @include fluidFontSize(1rem, 1.25rem, 20rem, 25.875rem, 1rem);
         text-align: left;
     }
 

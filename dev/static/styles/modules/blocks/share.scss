@@ -12,8 +12,8 @@
     }
 
     &__title {
-        @include font-setting($main-font, 0.875rem, 1.214285714285714, 700, $thingray);
-        @include fluidFontSize(0.875rem, 1.25rem, 20rem, 25.875rem, 0.875rem);
+        @include font-setting($main-font, 1rem, 1.1875, 700, $thingray);
+        @include fluidFontSize(1rem, 1.25rem, 20rem, 25.875rem, 1rem);
         text-align: center;
         text-transform: uppercase;
 
@@ -123,8 +123,6 @@
 
 @include min-screen(1366px) {
     .share {
-        padding-right: 37.55490483162518%;
-
         &__title {
             @include fluidFontSize(1.5rem, 2.25rem, 85.375rem, 104.9375rem, 1.5rem);
             line-height: 1.208333333333333;
@@ -145,8 +143,6 @@
 
 @include min-screen(1680px) {
     .share {
-        padding-right: 35%;
-
         &__title {
             font-size: 2.25rem;
             line-height: 1.194444;

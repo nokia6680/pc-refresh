@@ -74,15 +74,15 @@
 
     &__title {
         align-self: flex-start;
-        @include font-setting($main-font, 1.125rem, 1.11, 950, $lightwhite);
-        @include fluidFontSize(1.125rem, 1.375rem, 20rem, 25.875rem, 1.125rem);
+        @include font-setting($main-font, 1.25rem, 1.222, 950, $lightwhite);
+        @include fluidFontSize(1.25rem, 1.5rem, 20rem, 25.875rem, 1.25rem);
         text-transform: uppercase;
         text-align: left;
     }
 
     &__description {
-        @include font-setting($main-font, 0.75rem, 1.166666667, 325, $lightwhite);
-        @include fluidFontSize(0.75rem, 1rem, 20rem, 25.875rem, 0.75rem);
+        @include font-setting($main-font, 1rem, 1.1875, 400, $lightwhite);
+        @include fluidFontSize(1rem, 1.1875rem, 20rem, 25.875rem, 1rem);
         text-align: left;
     }
 

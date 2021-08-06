@@ -5,6 +5,9 @@
 
     padding: 1.4375rem 0.9375rem 1.75rem 0.9375rem;
 
+    margin-bottom: 0;
+    margin-top: auto;
+
     &__wrapper {
         width: 100%;
 
@@ -103,6 +106,14 @@
             &:last-child {
                 margin-right: 0;
             }
+
+            &:first-child {
+                display: none;
+            }
+
+            &:nth-child(3) {
+                display: none;
+            }
         }
 
         &-link {
@@ -128,17 +139,6 @@
                 background-size: contain;
             }
 
-            .fa-facebook-f::before {
-              position: absolute;
-              content: '\f39e';
-              @include fluidFontSize(1.125rem, 1.375rem, 20rem, 25.875rem, 1.125rem);
-              color: $black;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-
-            }
-
             .fa-vk::before {
               position: absolute;
               content: '\f189';
@@ -149,19 +149,17 @@
               transform: translate(-50%, -50%);
             }
 
-            .fa-instagram::before {
-              position: absolute;
-              content: '\f16d';
-              @include fluidFontSize(1.125rem, 1.375rem, 20rem, 25.875rem, 1.125rem);
-              color: $black;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
+            .fa-facebook-f::before {
+                display: none;
             }
 
             .fa-odnoklassniki::before {
+                display: none;
+            }
+
+            .fa-instagram::before {
               position: absolute;
-              content: '\f263';
+              content: '\f16d';
               @include fluidFontSize(1.125rem, 1.375rem, 20rem, 25.875rem, 1.125rem);
               color: $black;
               top: 50%;
@@ -382,19 +380,11 @@
                     height: 28px;
                 }
 
-                .fa-facebook-f::before {
-                  @include fluidFontSize(1.125rem, 1.375rem, 48rem, 85.375rem, 1.125rem);
-                }
-
                 .fa-vk::before {
                   @include fluidFontSize(1.125rem, 1.375rem, 48rem, 85.375rem, 1.125rem);
                 }
 
                 .fa-instagram::before {
-                  @include fluidFontSize(1.125rem, 1.375rem, 48rem, 85.375rem, 1.125rem);
-                }
-
-                .fa-odnoklassniki::before {
                   @include fluidFontSize(1.125rem, 1.375rem, 48rem, 85.375rem, 1.125rem);
                 }
 
@@ -535,19 +525,11 @@
                     height: 36px;
                 }
 
-                .fa-facebook-f::before {
-                  @include fluidFontSize(1.375rem, 1.5rem, 85.375rem, 104.9375rem, 1.375rem);
-                }
-
                 .fa-vk::before {
                   @include fluidFontSize(1.375rem, 1.5rem, 85.375rem, 104.9375rem, 1.375rem);
                 }
 
                 .fa-instagram::before {
-                  @include fluidFontSize(1.375rem, 1.5rem, 85.375rem, 104.9375rem, 1.375rem);
-                }
-
-                .fa-odnoklassniki::before {
                   @include fluidFontSize(1.375rem, 1.5rem, 85.375rem, 104.9375rem, 1.375rem);
                 }
 
@@ -663,19 +645,11 @@
                     height: 50px;
                 }
 
-                .fa-facebook-f::before {
-                    font-size: 1.875rem;
-                }
-
                 .fa-vk::before {
                     font-size: 1.875rem;
                 }
 
                 .fa-instagram::before {
-                    font-size: 1.875rem;
-                }
-
-                .fa-odnoklassniki::before {
                     font-size: 1.875rem;
                 }
 

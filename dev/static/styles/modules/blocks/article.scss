@@ -3,9 +3,8 @@
 
     @include flex-setting(column, flex-start, center);
 
-
     &__poster {
-        padding-top: 26.5625%;
+        padding-top: 56.25%;
         position: relative;
         width: 100%;
         height: 0;
@@ -20,10 +19,20 @@
 
             width: 100%;
             height: 100%;
+            object-fit: cover;
+        }
+
+        &--empty {
+            background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 10.5%, rgba(69,167,221,1) 10%, rgba(69,167,221,1) 20.5%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 30.5%, rgba(69,167,221,1) 30%, rgba(69,167,221,1) 40.5%, rgba(0,0,0,1) 40%, rgba(0,0,0,1) 50.5%, rgba(69,167,221,1) 50%, rgba(69,167,221,1) 60.5%, rgba(0,0,0,1) 60%, rgba(0,0,0,1) 70.5%, rgba(69,167,221,1) 70%, rgba(69,167,221,1) 80.5%, rgba(0,0,0,1) 80%, rgba(0,0,0,1) 90%, rgba(69,167,221,1) 90.5%, rgba(69,167,221,1) 100%);
+            background-position: top center;
+
+            .article__poster-image {
+                visibility: hidden;
+            }
         }
     }
 
-    @supports (aspect-ratio: 16 / 4.25) {
+    @supports (aspect-ratio: 16 / 9) {
         .article__poster {
             padding-top: 0;
             height: 100%;
@@ -38,11 +47,17 @@
 
                 width: 100%;
                 height: 100%;
-                object-fit: cover;
+                object-fit: scale-down;
 
-                aspect-ratio: 16 / 4.25;
+                aspect-ratio: 16 / 9;
             }
         }
+    }
+
+    &__body {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, center);
     }
 
     &__wrapper {
@@ -50,26 +65,19 @@
 
         @include flex-setting(column, flex-start, center);
 
-        padding-top: 4.375rem;
+        padding-top: 0;
 
         position: relative;
     }
 
     &__intro {
         width: 100%;
-        max-width: 90.625%;
-
         @include flex-setting(column, flex-start, center);
 
         background-color: $orange;
 
-        padding: 0.5rem 2rem;
-
-        position: absolute;
-
-        left: 50%;
-        transform: translateX(-50%);
-        top: -1.125rem;
+        padding: 0.5rem 1rem;
+        margin-bottom: 0.625rem;
 
         .breadcrumbs {
             padding: 0;
@@ -82,8 +90,8 @@
     }
 
     &__name {
-        @include font-setting($main-font, 1rem, 1.1875, 700, $black);
-        @include fluidFontSize(1rem, 1.375rem, 20rem, 25.875rem, 1rem);
+        @include font-setting($main-font, 1.25rem, 1.2, 700, $black);
+        @include fluidFontSize(1.25rem, 1.5rem, 20rem, 25.875rem, 1.25rem);
         text-transform: uppercase;
         text-align: center;
         margin-bottom: 0.5rem;
@@ -154,15 +162,15 @@
     }
 
     &__start {
-        @include font-setting($main-font, 0.75rem, 1.16666rem, 500, #000);
-        @include fluidFontSize(0.75rem, 1rem, 20rem, 25.875rem, 0.75rem);
+        @include font-setting($main-font, 1rem, 1.1875, 500, #000);
+        @include fluidFontSize(1rem, 1.1875rem, 20rem, 25.875rem, 1rem);
         margin-bottom: 0.9375rem;
     }
 
     &__description {
-        @include font-setting($main-font, 0.75rem, 1.16666, 325, #000);
-        @include fluidFontSize(0.75rem, 1rem, 20rem, 25.875rem, 1rem);
-        margin-bottom: 0.9375rem;
+        @include font-setting($main-font, 1rem, 1.1875, 400, #000);
+        @include fluidFontSize(1rem, 1.1875rem, 20rem, 25.875rem, 1rem);
+        margin-bottom: 1.25rem;
     }
 
     /* navigation */
@@ -176,9 +184,10 @@
             @include flex-setting(column, center, center);
         }
 
-        &-anchor {
-            @include font-setting($main-font, 0.875rem, 1.714285714285714, 700, #000);
-            @include fluidFontSize(0.875rem, 1.125rem, 20rem, 25.875rem, 0.875rem);
+        &-anchor,
+        a {
+            @include font-setting($main-font, 1rem, 1.875, 700, #000);
+            @include fluidFontSize(1rem, 1.25rem, 20rem, 25.875rem, 1rem);
             text-decoration: none;
             text-align: left;
             transition: 0.2s ease-in;
@@ -219,11 +228,59 @@
 
         padding: 1.125rem 0.9375rem 0 0.9375rem;
         margin-bottom: 1.5625rem;
+
+        ul {
+            width: 100%;
+
+            @include flex-setting(column, flex-start, flex-start);
+
+            margin-bottom: 1.5rem;
+
+            li {
+                @include font-setting($main-font, 1rem, 1.1875, 325, $black);
+                @include fluidFontSize(1rem, 1.1875rem, 20rem, 25.875rem, 1rem)
+            }
+        }
+
+        a {
+            color: $black;
+            text-decoration: none;
+
+            &:hover {
+                color: $pink;
+                transition: 0.2s linear;
+            }
+        }
+
+        .video__link {
+            margin-bottom: 1.5rem;
+        }
+
+        .article__feed {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .feed__list--theme {
+            padding-left: 0;
+            padding-right: 0;
+            padding-bottom: 1.375rem;
+            margin-bottom: 0;
+            border-bottom: none;
+
+            .feed__item {
+                margin-bottom: 1.125rem;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
     }
 
     &__title {
-        @include font-setting($main-font, 1rem, 1.1875, 700, $black);
-        @include fluidFontSize(1rem, 1.25rem, 20rem, 25.875rem, 1rem);
+        @include font-setting($main-font, 1.25rem, 1.2, 700, $black);
+        @include fluidFontSize(1.25rem, 1.5rem, 20rem, 25.875rem, 1.25rem);
         text-transform: uppercase;
         text-align: center;
         align-self: flex-start;
@@ -238,6 +295,8 @@
         overflow: hidden;
         margin-bottom: 0.9375rem;
 
+        display: flex;
+
         &-image {
             position: absolute;
             top: 0;
@@ -247,7 +306,7 @@
 
             width: 100%;
             height: 100%;
-
+            object-fit: cover;
             transform-origin: center;
             transition: 0.3s ease-in;
         }
@@ -259,6 +318,7 @@
 
         @include flex-setting(column, flex-start, flex-start);
         margin-bottom: 0.9375rem;
+        margin-top: 0.9375rem;
 
         &-item {
             width: auto;
@@ -271,23 +331,27 @@
         }
 
         &-name {
-            @include font-setting($main-font, 0.625rem, 1.2, 325, $thingray);
-            @include fluidFontSize(0.625rem, 0.875rem, 20rem, 25.875rem, 0.625rem);
+            @include font-setting($main-font, 0.8125rem, 1.2, 325, $thingray);
+            @include fluidFontSize(0.8125rem, 1rem, 20rem, 25.875rem, 0.8125rem);
             margin-bottom: 0.125rem;
         }
 
         &-data {
-            @include font-setting($main-font, 0.75rem, 1.16666rem, 325, $black);
-            @include fluidFontSize(0.75rem, 1rem, 20rem, 25.875rem, 0.75rem)
+            @include font-setting($main-font, 1rem, 1.16666rem, 325, $black);
+            @include fluidFontSize(1rem, 1.25rem, 20rem, 25.875rem, 1.25 rem)
         }
     }
 
     &__subtitle {
-        @include font-setting($main-font, 0.875rem, 1.214285714285714, 700, #000);
-        @include fluidFontSize(0.875rem, 1.125rem, 20rem, 25.875rem, 0.875rem)
+        @include font-setting($main-font, 1.125rem, 1.1818, 700, #000);
+        @include fluidFontSize(1.125rem, 1.375rem, 20rem, 25.875rem, 1.125rem)
         margin-bottom: 0.9375rem;
         text-align: left;
         align-self: flex-start;
+    }
+
+    i {
+        font-style: normal;
     }
 
     &__trailer {
@@ -310,10 +374,8 @@
         bottom: 0;
     }
 
-
     @supports (aspect-ratio: 16 / 9) {
         .article__frame {
-            width: 100%;
             height: 100%;
             padding-top: 0;
 
@@ -324,13 +386,7 @@
                 bottom: auto;
                 right: auto;
 
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
                 aspect-ratio: 16 / 9;
-
-                transform-origin: center;
-                transition: 0.3s ease-in;
             }
         }
 
@@ -353,40 +409,11 @@
     }
 }
 
-@include min-screen(375px) {
-    .article {
-        &__wrapper {
-            padding-top: 5.375rem;
-        }
-    }
-}
-
 @include min-screen(768px) {
     .article {
-        &__poster {
-            padding-top: 18.229166666666668%;
-        }
-
-        @supports (aspect-ratio: 16 / 3) {
-            .article__poster {
-                padding-top: 0;
-
-                &-image {
-                    aspect-ratio: 16 / 3;
-                }
-            }
-        }
-
-        &__wrapper {
-            padding-top: 7.625rem;
-        }
-
         &__intro {
-            max-width: 85.9375%;
-
-            padding: 1.0625rem 1.125rem 1.6875rem 1.125rem;
-
-            top: -2.1875rem;
+            padding: 1.0625rem 3.375rem 1.6875rem 3.375rem;
+            margin-bottom: 2.5rem;
 
             .breadcrumbs {
                 align-items: flex-start;
@@ -432,14 +459,14 @@
         }
 
         &__start {
-            @include fluidFontSize(0.875rem, 1.125rem, 48rem, 85.3125rem, 0.875rem);
-            line-height: 1.142858;
+            @include fluidFontSize(1rem, 1.25rem, 48rem, 85.3125rem, 1rem);
+            line-height: 1.222;
             margin-bottom: 1.5rem;
         }
 
         &__description {
-            @include fluidFontSize(0.875rem, 1.125rem, 48rem, 85.3125rem, 0.875rem);
-            line-height: 1.21429;
+            @include fluidFontSize(1rem, 1.25rem, 48rem, 85.3125rem, 1rem);
+            line-height: 1.222;
             margin-bottom: 1.25rem;
         }
 
@@ -457,6 +484,39 @@
         &__chapter {
             padding: 1.25rem 3.375rem 0 3.375rem;
             margin-bottom: 1.875rem;
+
+            ul {
+                margin-bottom: 1.5rem;
+
+                li {
+                    @include fluidFontSize(0.875rem, 1.125rem, 48rem, 85.3125rem, 0.875rem);
+                    line-height: 2.571428;
+                }
+            }
+
+            .article__feed {
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            .feed__list--theme {
+                width: 100%;
+                display: grid;
+
+                align-items: start;
+                grid-template-columns: 1fr 1fr;
+                margin-bottom: 1.875rem;
+
+                grid-column-gap: 1.25rem;
+                grid-row-gap: 1.875rem;
+
+                border-bottom: none;
+                margin-bottom: 1.5rem;
+
+                .feed__item {
+                    margin-bottom: 0;
+                }
+            }
         }
 
         &__title {
@@ -513,19 +573,45 @@
 
 @include min-screen(1366px) {
     .article {
-        &__wrapper {
-            padding-top: 6.0625rem;
+        &__body {
             padding-left: 11.20058565153734%;
+            padding-right: 11.20058565153734%;
+
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: nowrap;
         }
 
+        &__wrapper {
+            max-width: 66.0377358490566%;
+        }
+
+        &__aside {
+            max-width: 23.58490566037736%;
+        }
+
+        &__poster {
+            padding-top: 25.036603221083457%;
+
+            &-image {
+                object-fit: scale-down;
+            }
+        }
+
+        @supports (aspect-ratio: 16 / 4) {
+            .article__poster {
+                padding-top: 0;
+
+                &-image {
+                    aspect-ratio: 16 / 4;
+                }
+            }
+        }
+
+
         &__intro {
-            max-width: 84.04099560761347%;
-
-            padding: 1rem 2.5625rem 1.875rem 2.5625rem;
-
-            top: -6.125rem;
-
-            order: 1;
+            padding: 1rem 11.20058565153734% 1.875rem 11.20058565153734%;
 
             .breadcrumbs {
                 margin-bottom: 1rem;
@@ -566,8 +652,7 @@
 
         &__preview {
             padding-left: 0;
-            padding-right: 42.29183841714757%;
-            order: 2;
+            padding-right: 0;
         }
 
         &__start {
@@ -593,15 +678,37 @@
         }
 
         &__chapter {
-            padding: 1.125rem 42.29183841714757% 0 0;
+            padding: 0;
             margin-bottom: 2.5rem;
 
-            order: 3;
+            ul {
+                margin-bottom: 1.75rem;
+
+                li {
+                    @include fluidFontSize(1.125rem, 1.375rem, 85.375rem, 104.9375rem, 1.125rem);
+                    line-height: 2.222222;
+                }
+            }
+
+            .article__feed {
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            .feed__list--theme {
+                border-bottom: none;
+                margin-bottom: 1.5rem;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-column-gap: 1.25rem;
+                grid-row-gap: 1.5625rem;
+            }
         }
 
         &__title {
             @include fluidFontSize(1.625rem, 2rem, 85.375rem, 104.9375rem, 1.625rem);
             line-height: 1.192307;
+            text-align: left;
+            align-self: flex-start;
         }
 
         &__frame {
@@ -610,6 +717,7 @@
 
         /* Синопсис */
         &__synopsis {
+            margin-top: 1.5rem;
             margin-bottom: 1.5rem;
 
             &-item {
@@ -635,7 +743,6 @@
         }
 
         .share {
-            order: 4;
             display: flex;
             margin-bottom: 3.125rem;
         }
@@ -643,8 +750,6 @@
         &__banner {
             margin: 0;
             width: 100%;
-            order: 5;
-            margin-right: 42.29183841714757%;
 
             &.line-banner {
                 width: 520px;
@@ -653,31 +758,29 @@
                 margin-bottom: 3rem;
             }
         }
-
-        &__feed {
-            padding-right: 34.8722176422094%;
-            order: 6;
-        }
     }
 }
 
 @include min-screen(1680px) {
     .article {
+        &__body {
+            max-width: 1440px;
+            padding: 0;
+        }
+
         &__wrapper {
-            padding-top: 8.3125rem;
-            padding-left: 0;
-            max-width: 1520px;
+            max-width: 65.97222222222222%;
+        }
+
+        &__aside {
+            max-width: 23.125%;
         }
 
         &__intro {
-            max-width: 100%;
-
             padding: 1.0625rem 2.8125rem 1.625rem 2.8125rem;
 
-            top: -5.1875rem;
-
             .breadcrumbs {
-                margin-bottom: 1.5rem;
+                margin-bottom: 1rem;
             }
         }
 
@@ -713,11 +816,6 @@
             }
         }
 
-        &__preview {
-            padding-left: 2.5rem;
-            padding-right: 35%;
-        }
-
         &__start {
             font-size: 1.375rem;
             line-height: 1.136363;
@@ -742,7 +840,22 @@
         }
 
         &__chapter {
-            padding: 1.375rem 35% 0 2.5rem;;
+            padding: 0;
+
+            .feed__list--theme {
+                max-width: 1440px;
+                grid-column-gap: 2.25rem;
+                grid-row-gap: 2.5rem;
+            }
+        }
+
+        ul {
+            margin-bottom: 1.75rem;
+
+            li {
+                font-size: 1.375rem;
+                line-height: 1.818181818181818;
+            }
         }
 
         &__title {
@@ -757,6 +870,7 @@
 
         /* Синопсис */
         &__synopsis {
+            margin-top: 1.75rem;
             margin-bottom: 1.75rem;
 
             &-item {
@@ -786,7 +900,6 @@
 
         &__banner {
             order: 4;
-            margin-right: 34%;
 
             &.line-banner {
                 width: 728px;
@@ -794,11 +907,6 @@
 
                 margin-bottom: 2.5rem;
             }
-        }
-
-        &__feed {
-            padding-left: 2.5rem;
-            padding-right: 26.97368421052632%;
         }
     }
 }

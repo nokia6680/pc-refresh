@@ -51,7 +51,7 @@ html(lang="ru-RU")
                         .quad-banner__wrapper
                             
                     .show__schedule
-                        h2.show__schedule-title Расписание
+                        b.show__schedule-title Расписание
                         ul.show__schedule-list
                             li.show__schedule-item
                                 time(datetime="20-07-2021 21:00").show__schedule-time Четверг 21:00 МСК
@@ -67,7 +67,7 @@ html(lang="ru-RU")
                                 span.show__schedule-info 5 сезон 1 серия
             section.show__feed.feed#show
                 .feed__wrapper
-                    h2.feed__title Новости шоу
+                    b.feed__title Новости шоу
                         
                     ul.feed__list.feed__list--show
                         +mediaItem('feed__item dark', 'feed-image-1', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
@@ -79,7 +79,7 @@ html(lang="ru-RU")
                     button(type="button").feed__more.feed__more--pink Все новости шоу
             section.starring
                 .starring__wrapper
-                    h2.starring__title Персонажи
+                    b.starring__title Персонажи
                     ul.starring__slider.swiper-container-4
                         .swiper-wrapper
                             +starItem('live-image-1', 'Джефф')

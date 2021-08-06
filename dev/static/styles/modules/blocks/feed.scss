@@ -30,8 +30,8 @@
 
     &--index {
         .feed__title {
-            @include fluidFontSize(1rem, 1.25rem, 20rem, 25.875rem, 1rem);
-            line-height: 1.1875;
+            @include fluidFontSize(1.25rem, 1.5rem, 20rem, 25.875rem, 1.25rem);
+            line-height: 1.222;
             color: $lightwhite;
             margin-bottom: 1rem;
         }
@@ -44,8 +44,8 @@
     }
 
     &__title {
-        @include font-setting($main-font, 1.125rem, 1.222, 700, $black);
-        @include fluidFontSize(1.125rem, 1.375rem, 20rem, 25.875rem, 1.125rem);
+        @include font-setting($main-font, 1.25rem, 1.2, 700, $black);
+        @include fluidFontSize(1.25rem, 1.5rem, 20rem, 25.875rem, 1.25rem);
         text-align: center;
         text-transform: uppercase;
         margin-bottom: 1.25rem;
@@ -56,8 +56,8 @@
             @include flex-setting(column, center, center);
             color: $lightwhite;
 
-            @include fluidFontSize(0.875rem, 1.125rem, 20rem, 25.875rem, 0.875rem);
-            line-height: 1.214285714285714;
+            @include fluidFontSize(1.125rem, 1.4375rem, 20rem, 25.875rem, 1.125rem);
+            line-height: 1.222;
 
             background-color: $purple;
             padding-top: 0.625rem;
@@ -72,8 +72,8 @@
             @include flex-setting(column, center, center);
             color: $lightwhite;
 
-            @include fluidFontSize(0.875rem, 1.125rem, 20rem, 25.875rem, 0.875rem);
-            line-height: 1.214285714285714;
+            @include fluidFontSize(1.125rem, 1.4375rem, 20rem, 25.875rem, 1.125rem);
+            line-height: 1.222;
 
             background-color: $pink;
             padding-top: 0.625rem;
@@ -88,8 +88,8 @@
             @include flex-setting(column, center, center);
             color: $lightwhite;
 
-            @include fluidFontSize(0.875rem, 1.125rem, 20rem, 25.875rem, 0.875rem);
-            line-height: 1.214285714285714;
+            @include fluidFontSize(1.125rem, 1.4375rem, 20rem, 25.875rem, 1.125rem);
+            line-height: 1.222;
 
             background-color: $blue;
             padding-top: 0.625rem;
@@ -101,8 +101,8 @@
         &--other {
             color: $lightwhite;
 
-            @include fluidFontSize(0.875rem, 1.125rem, 20rem, 25.875rem, 0.875rem);
-            line-height: 1.214285714285714;
+            @include fluidFontSize(1.125rem, 1.4375rem, 20rem, 25.875rem, 1.125rem);
+            line-height: 1.222;
 
             margin-bottom: 1.375rem;
         }
@@ -460,6 +460,7 @@
 
         &--theme {
             padding-left: 0;
+            padding-right: 0;
         }
 
         &--watch {
@@ -679,7 +680,7 @@
         }
 
         &__title {
-            font-size: 2rem;
+            font-size: 2.5rem;
             line-height: 1.2;
 
             margin-bottom: 2.25rem;

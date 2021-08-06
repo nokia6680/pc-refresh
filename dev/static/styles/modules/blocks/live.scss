@@ -1,13 +1,13 @@
 .live {
     width: 100%;
-
     background-color: $lightwhite;
 
     overflow-x: hidden;
 
+    @include flex-setting(column, flex-start, center);
+
     &__wrapper {
         width: 100%;
-
         @include flex-setting(column, flex-start, center);
 
         padding: 2rem 0.9375rem 18.125rem 0.9375rem;
@@ -17,8 +17,8 @@
     }
 
     &__title {
-        @include font-setting($main-font, 1rem, 1.1875, 700, $black);
-        @include fluidFontSize(1rem, 1.1875rem, 20rem, 25.875rem, 1rem);
+        @include font-setting($main-font, 1.25rem, 1.2, 700, $black);
+        @include fluidFontSize(1.25rem, 1.5rem, 20rem, 25.875rem, 1.25rem);
         text-transform: uppercase;
         text-align: center;
         margin-bottom: 1rem;
@@ -39,14 +39,13 @@
 
     &__link {
         width: 100%;
-        height: 100%;
-
         @include flex-setting(column, flex-start, flex-start);
 
         text-decoration: none;
     }
 
     &__frame {
+        display: flex;
         padding-top: 100%;
         position: relative;
         width: 100%;
@@ -89,8 +88,8 @@
     }
 
     &__time {
-        @include font-setting($main-font, 0.75rem, 1.166666rem, 700, $black);
-        @include fluidFontSize(0.75rem, 0.875rem, 20rem, 25.875rem, 0.75rem);
+        @include font-setting($main-font, 1rem, 1.1875, 700, $black);
+        @include fluidFontSize(1rem, 1.1875rem, 20rem, 25.875rem, 1rem);
         text-transform: uppercase;
 
         padding-left: 1.1875rem;
@@ -125,8 +124,8 @@
     }
 
     &__details {
-        @include font-setting($main-font, 0.75rem, 1.166666rem, 325, $darkwhite);
-        @include fluidFontSize(0.75rem, 0.875rem, 20rem, 25.875rem, 0.75rem);
+        @include font-setting($main-font, 1rem, 1.1875, 325, $darkwhite);
+        @include fluidFontSize(1rem, 1.1875rem, 20rem, 25.875rem, 1rem);
 
         text-align: left;
         margin-bottom: 2rem;
@@ -467,6 +466,12 @@
             &.line-banner {
                 display: flex;
                 margin-bottom: 0;
+            }
+        }
+
+        @supports not (aspect-ratio: 1 / 1) {
+            .live__slider {
+                min-height: 333px;
             }
         }
     }

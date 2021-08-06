@@ -18,98 +18,105 @@ html(lang="ru-RU")
         include ../modules/header/header		
         main.main.main--article
             article.article
-                picture.article__poster
+                picture.article__poster.article__poster--empty
                     source(type="image/webp" media="(min-resolution: 384dpi), (-webkit-min-device-pixel-ratio: 3)" srcset="static/images/content/article-intro@3x.webp 3x" sizes="100vw")
                     source(type="image/webp" media="(min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2)" srcset="static/images/content/article-intro@2x.webp 2x" sizes="100vw")
                     source(type="image/webp" srcset="static/images/content/article-intro@1x.webp" sizes="100vw")
                     source(media="(min-resolution: 384dpi), (-webkit-min-device-pixel-ratio: 3)" srcset="static/images/content/article-intro@3x.jpg 3x" sizes="100vw")
                     source(media="(min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2)" srcset="static/images/content/article-intro@2x.jpg 2x" sizes="100vw")
                     img(itemprop="image" src="static/images/content/article-intro@1x.jpg" sizes="100vw").article__poster-image
-                .article__wrapper
-                    <!--Блок интро-->
-                    .article__intro
-                        +breadcrumb([["Главная ", "/index.html"], ["Новости ", "/news.html"], ["Самые страшные мистические фильмы", "#"]])
-                        h1.article__name Самые страшные мистические фильмы
-                        .article__info
-                            span.article__info-views 2003
-                            time(datetime="14-07-2021 19:00").article__info-date 22.07.2021
+                .article__intro
+                    +breadcrumb([["Главная ", "/index.html"], ["Новости ", "/news.html"], ["Самые страшные мистические фильмы", "#"]])
+                    h1.article__name Самые страшные мистические фильмы
+                    .article__info
+                        span.article__info-views 2003
+                        time(datetime="14-07-2021 19:00").article__info-date 22.07.2021
+                .article__body
+                    .article__wrapper
+                        <!--Превью статьи-->
+                        section.article__preview
+                            b.article__start Присутствие потусторонних сил в нашем мире старательно отрицается скептиками, приверженцы идей агента Малдера строят не менее фантастические теории по сокрытию мистических существ от глаз обывателей. Хм… Наверняка тогда есть где-то и реалити-шоу, где этих существ используют, как монстров, этакая «Хижина в лесу».
+                            p.article__description Триллеры и фильмы ужасов на мистическую тему всегда будоражили нервишки зрителю, а для режиссеров это отличный материал для разного рода высказываний. Разброс тем, которые используют авторы, действительно велик: привидения, дьявол, существа из мифологий, поверий и т.д. Но, как известно, самые страшные монстры живут внутри людей, поэтому двенадцать самых страшных и интересных мистических фильмов расскажут больше о человеке, чем о потустороннем.
                             
-                    <!--Превью статьи-->
-                    section.article__preview
-                        b.article__start Присутствие потусторонних сил в нашем мире старательно отрицается скептиками, приверженцы идей агента Малдера строят не менее фантастические теории по сокрытию мистических существ от глаз обывателей. Хм… Наверняка тогда есть где-то и реалити-шоу, где этих существ используют, как монстров, этакая «Хижина в лесу».
-                        p.article__description Триллеры и фильмы ужасов на мистическую тему всегда будоражили нервишки зрителю, а для режиссеров это отличный материал для разного рода высказываний. Разброс тем, которые используют авторы, действительно велик: привидения, дьявол, существа из мифологий, поверий и т.д. Но, как известно, самые страшные монстры живут внутри людей, поэтому двенадцать самых страшных и интересных мистических фильмов расскажут больше о человеке, чем о потустороннем.
+                            <!--navigation-->
+                            include ../modules/blocks/navigation
                         
-                        <!--navigation-->
-                        include ../modules/blocks/navigation
-                    
-                    <!--Раздел статьи-->
-                    section.article__chapter#chapter-1
-                        h2.article__title Приют
-                        picture.article__frame
-                            source(type="image/webp" media="(min-resolution: 384dpi), (-webkit-min-device-pixel-ratio: 3)" srcset="static/images/content/article-pic-1@3x.webp 3x" sizes="100vw")
-                            source(type="image/webp" media="(min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2)" srcset="static/images/content/article-pic-1@2x.webp 2x" sizes="100vw")
-                            source(type="image/webp" srcset="static/images/content/article-pic-1@1x.webp" sizes="100vw")
-                            source(media="(min-resolution: 384dpi), (-webkit-min-device-pixel-ratio: 3)" srcset="static/images/content/article-pic-1@3x.jpg 3x" sizes="100vw")
-                            source(media="(min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2)" srcset="static/images/content/article-pic-1@2x.jpg 2x" sizes="100vw")
-                            img(itemprop="image" src="static/images/content/article-pic-1@1x.jpg" sizes="100vw").article__frame-image
-                        <!--Синопсис-->
-                        ul.article__synopsis
-                            for i in synopsisData
-                                li(class="article__synopsis-item " +i.type)
-                                    span.article__synopsis-name=i.name
-                                    span.article__synopsis-data=i.data
-                        p.article__description До того, как Хуан Антонио Байона взялся за углубление истории о генно модифицированных динозаврах главным успехом в его карьере был мистический хоррор «Приют». Байона является одним из хоррор-мейкеров, которых привел в Голливуд Гильермо дель Торо. Другой патрон этой обоймы, Андрес Мускетти, ответственный за дилогию «Оно» по одноименному роману Стивена Кинга, сейчас занят съемками первой киноэкранизации о главном спидстере вселенной DC Флэше. Лаура (Белен Руэда) вместе со своим мужем Карлосом (Фернандо Кайо) возвращается в дом детства Лауры, который когда-то был приютом для детей с отклонениями. Женщина хочет возродить эту добрую инициативу, потому что сама выросла в этом месте. Но есть сложности. Симон, приемный сын инициативной пары, является переносчиком ВИЧ-инфекции. Ни того ни другого факта мальчик не знает, зато знает много-много детей, которые «не вырастут так же, как и он». Новые друзья добродушно все рассказывают мальчику, из-за чего родителям приходится объясняться с сыном.
-                        p.article__description Ситуация усугубляется тем, что в доме начинают происходить странные вещи: дети в страшных масках пугают Лауру, социальные работники шарятся в сарае по ночам, а дом наполняется жуткими звуками, да и сама женщина находит тут и там чужие вещи. А хуже всего то, что Симон пропал. Байона нагнетает таинственную атмосферу с первых кадров. Все говорит о том, что у дома темное прошлое, мистические силы не дремлют. При этом сложно отделаться от впечатления, что Лаура просто не в себе от груза навалившихся проблем на почве тяжелого детства. Ведь все события мы наблюдаем с точки зрения женщины. Может, ее состояние и вызвало призраков прошлого.
-                        
-                        h3.article__subtitle Трейлер
-                        .article__trailer
-                            iframe(src="https://www.youtube.com/embed/k5FQ9hp7jk8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen).article__video
+                        <!--Раздел статьи-->
+                        section.article__chapter#chapter-1
+                            h2.article__title Приют
+                            picture.article__frame
+                                source(type="image/webp" media="(min-resolution: 384dpi), (-webkit-min-device-pixel-ratio: 3)" srcset="static/images/content/article-pic-1@3x.webp 3x" sizes="100vw")
+                                source(type="image/webp" media="(min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2)" srcset="static/images/content/article-pic-1@2x.webp 2x" sizes="100vw")
+                                source(type="image/webp" srcset="static/images/content/article-pic-1@1x.webp" sizes="100vw")
+                                source(media="(min-resolution: 384dpi), (-webkit-min-device-pixel-ratio: 3)" srcset="static/images/content/article-pic-1@3x.jpg 3x" sizes="100vw")
+                                source(media="(min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2)" srcset="static/images/content/article-pic-1@2x.jpg 2x" sizes="100vw")
+                                img(itemprop="image" src="static/images/content/article-pic-1@1x.jpg" sizes="100vw").article__frame-image
+                            <!--Синопсис-->
+                            ul.article__synopsis
+                                for i in synopsisData
+                                    li(class="article__synopsis-item " +i.type)
+                                        span.article__synopsis-name=i.name
+                                        span.article__synopsis-data=i.data
+                            p.article__description До того, как Хуан Антонио Байона взялся за углубление истории о генно модифицированных динозаврах главным успехом в его карьере был мистический хоррор «Приют». Байона является одним из хоррор-мейкеров, которых привел в Голливуд Гильермо дель Торо. Другой патрон этой обоймы, Андрес Мускетти, ответственный за дилогию «Оно» по одноименному роману Стивена Кинга, сейчас занят съемками первой киноэкранизации о главном спидстере вселенной DC Флэше. Лаура (Белен Руэда) вместе со своим мужем Карлосом (Фернандо Кайо) возвращается в дом детства Лауры, который когда-то был приютом для детей с отклонениями. Женщина хочет возродить эту добрую инициативу, потому что сама выросла в этом месте. Но есть сложности. Симон, приемный сын инициативной пары, является переносчиком ВИЧ-инфекции. Ни того ни другого факта мальчик не знает, зато знает много-много детей, которые «не вырастут так же, как и он». Новые друзья добродушно все рассказывают мальчику, из-за чего родителям приходится объясняться с сыном.
+                            
+                            section.article__feed.feed.feed--theme#theme
+                                .feed__wrapper
+                                    h2.feed__title.feed__title--purple Материалы по теме
+                                    ul.feed__list.feed__list--theme
+                                        +mediaItem('feed__item', 'feed-image-1', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
+                                        +mediaItem('feed__item', 'feed-image-2', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
+                                        +mediaItem('feed__item', 'feed-image-3', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
+                                        
+                            p.article__description Ситуация усугубляется тем, что в доме начинают происходить странные вещи: дети в страшных масках пугают Лауру, социальные работники шарятся в сарае по ночам, а дом наполняется жуткими звуками, да и сама женщина находит тут и там чужие вещи. А хуже всего то, что Симон пропал. Байона нагнетает таинственную атмосферу с первых кадров. Все говорит о том, что у дома темное прошлое, мистические силы не дремлют. При этом сложно отделаться от впечатления, что Лаура просто не в себе от груза навалившихся проблем на почве тяжелого детства. Ведь все события мы наблюдаем с точки зрения женщины. Может, ее состояние и вызвало призраков прошлого.
+                            
+                            h3.article__subtitle Трейлер
+                            .article__trailer
+                                iframe(src="https://www.youtube.com/embed/k5FQ9hp7jk8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen).article__video
+                                    
+                        .article__banner.line-banner
+                            .line-banner__wrapper
                                 
-                    .article__banner.line-banner
-                        .line-banner__wrapper
-                            
-                    section.article__feed.feed.feed--theme#theme
-                        .feed__wrapper
-                            h2.feed__title.feed__title--purple Материалы по теме
-                            ul.feed__list.feed__list--theme
-                                +mediaItem('feed__item', 'feed-image-1', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
-                                +mediaItem('feed__item', 'feed-image-2', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
-                                +mediaItem('feed__item', 'feed-image-3', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
-                    
-                    include ../modules/blocks/share
-            aside.aside
-                section.aside__feed.feed#fresh
-                    .feed__wrapper
-                        h2.feed__title.feed__title--pink Новые статьи
-            
-                        ul.feed__list.feed__list--fresh
-                            +mediaItem('feed__item', 'feed-image-1', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
-                            +mediaItem('feed__item', 'feed-image-2', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
-                            +mediaItem('feed__item', 'feed-image-3', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
-                
-                section.aside__feed.feed#popular
-                    .feed__wrapper
-                        h2.feed__title.feed__title--blue Популярные статьи
+                        section.article__feed.feed.feed--theme#theme
+                            .feed__wrapper
+                                h2.feed__title.feed__title--purple Материалы по теме
+                                ul.feed__list.feed__list--theme
+                                    +mediaItem('feed__item', 'feed-image-1', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
+                                    +mediaItem('feed__item', 'feed-image-2', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
+                                    +mediaItem('feed__item', 'feed-image-3', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
                         
-                        ul.feed__list.feed__list--popular
-                            +mediaItem('feed__item', 'feed-image-1', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
-                            +mediaItem('feed__item', 'feed-image-2', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
-                            +mediaItem('feed__item', 'feed-image-3', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
-                include ../modules/blocks/share
-                
-                .aside__banner.quad-banner
-                    .quad-banner__wrapper
-    
+                        include ../modules/blocks/share
+                    .article__aside.aside
+                        section.aside__feed.feed#fresh
+                            .feed__wrapper
+                                b.feed__title.feed__title--pink Новые статьи
+                    
+                                ul.feed__list.feed__list--fresh
+                                    +mediaItem('feed__item', 'feed-image-1', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
+                                    +mediaItem('feed__item', 'feed-image-2', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
+                                    +mediaItem('feed__item', 'feed-image-3', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
+                        
+                        section.aside__feed.feed#popular
+                            .feed__wrapper
+                                b.feed__title.feed__title--blue Популярные статьи
+                                
+                                ul.feed__list.feed__list--popular
+                                    +mediaItem('feed__item', 'feed-image-1', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
+                                    +mediaItem('feed__item', 'feed-image-2', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
+                                    +mediaItem('feed__item', 'feed-image-3', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')
+                        include ../modules/blocks/share
+                        
+                        .aside__banner.quad-banner
+                            .quad-banner__wrapper
             article.choose
                 section.choose__upper.watch__info
-                    h1.watch__title Какой сериал выбрать?
+                    b.watch__title Какой сериал выбрать?
                     ul.watch__cats
                         for i in watchList
                             li.watch__tag
                                 a(href="" +i.link target="_self").watch__tag-link=i.name
                 section.choose__feed.feed#other
                     .feed__wrapper
-                        h2.feed__title.feed__title--other Другие интересные статьи
+                        b.feed__title.feed__title--other Другие интересные статьи
                                         
                         ul.feed__list.feed__list--other
                             +mediaItem('feed__item light', 'feed-image-1', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')

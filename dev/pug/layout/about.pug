@@ -1,0 +1,30 @@
+include ../helpers/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        title #{title}
+        <!--[if IE]>
+        meta(http-equiv='X-UA-Compatible', content="IE = edge")
+        <![endif]-->
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+        link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous")
+        link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css")
+    body.body.body--about
+        include ../modules/header/header
+        main.main.main--contacts
+            +breadcrumb([["Главная ", "/index.html"], ["О телеканале ", "#"]])
+            section.about-info
+                h1.about-info__title О телеканале
+                p.about-info__description Paramount Comedy — российский развлекательный телеканал, показывающий лучшие комедийные сериалы, ситкомы, стендап и анимации. Канал транслирует культовые современные шоу «Теория большого взрыва» и «Как я встретил вашу маму» в авторской озвучке по версии Кураж-Бамбей, «Южный парк» в озвучке Жени Рыбова, а также полюбившиеся зрителям сериалы «Друзья», «Две девицы на мели», «Майк и Молли», «Бывает и хуже» и многие другие. Кроме того, в библиотеку канала входят лучшие концерты мировых звезд стендапа. 
+        include ../modules/footer/footer
+        script(src="static/js/vendor/jquery-3.3.1.min.js")
+        //script(src="static/js/vendor/libs.js")
+        script(src="static/js/main.js")
+        script(src="https://unpkg.com/swiper/swiper-bundle.js")
+        script(src="static/js/slider.js")
+        block script

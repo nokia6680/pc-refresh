@@ -45,7 +45,7 @@ mixin liveItem(image, link, datetime, time, title, description)
                 source(media="(min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2)" srcset="static/images/content/" +image +"@2x.jpg 2x" sizes="100vw")
                 img(itemprop="image" src="static/images/content/" +image +"@1x.jpg" sizes="100vw").live__frame-image
             time(datetime="" +datetime).live__time=time
-            h3.live__name=title
+            b.live__name=title
             span.live__details=description
             
 mixin starItem(image, title)
@@ -57,7 +57,7 @@ mixin starItem(image, title)
             source(media="(min-resolution: 384dpi), (-webkit-min-device-pixel-ratio: 3)" srcset="static/images/content/" +image +"@3x.jpg 3x" sizes="100vw")
             source(media="(min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2)" srcset="static/images/content/" +image +"@2x.jpg 2x" sizes="100vw")
             img(itemprop="image" src="static/images/content/" +image +"@1x.jpg" sizes="100vw").starring__frame-image
-        h3.starring__name=title
+        b.starring__name=title
             
 mixin breadcrumb(levels)
     .breadcrumbs(aria-label="breadcrumb")
@@ -91,7 +91,7 @@ mixin progItem(link, datetime, time, image, mark, title, chapter, description)
                     source(media="(min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2)" srcset="static/images/content/" +image +"@2x.jpg 2x" sizes="100vw")
                     img(itemprop="image" src="static/images/content/" +image +"@1x.jpg" sizes="100vw").program__frame-image
             .program__info
-                h2.program__name=title
+                b.program__name=title
                 span.program__chapter=chapter
                 p.program__description=description
 
@@ -105,4 +105,4 @@ mixin seriesItem(link, image, title)
                 source(media="(min-resolution: 384dpi), (-webkit-min-device-pixel-ratio: 3)" srcset="static/images/content/" +image +"@3x.jpg 3x" sizes="100vw")
                 source(media="(min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2)" srcset="static/images/content/" +image +"@2x.jpg 2x" sizes="100vw")
                 img(itemprop="image" src="static/images/content/" +image +"@1x.jpg" sizes="100vw").series__frame-image
-            h3.series__name=title
+            h2.series__name=title

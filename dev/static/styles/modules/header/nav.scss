@@ -124,6 +124,8 @@
 @include min-screen(768px) {
     .nav {
         width: auto;
+        height: 100%;
+        @include flex-setting(column, center, center);
         position: relative;
         left: auto;
         top: auto;
@@ -180,7 +182,6 @@
             padding: 0;
 
             position: relative;
-            overflow: hidden;
             padding-top: 0.4375rem;
             padding-bottom: 0.4375rem;
 
@@ -196,8 +197,8 @@
                 height: 2px;
                 background-color: $pink;
 
-                bottom: 0;
-                left: -100%;
+                bottom: -12px;
+                left: 0;
                 opacity: 0;
 
                 transition: all 0.3s ease-in;
@@ -206,11 +207,27 @@
             &:hover,
             &:active {
                 &::before {
-                    left: 0;
+                    bottom: -2px;
                     opacity: 1;
 
                     transition: all 0.3s ease-in;
                 }
+            }
+        }
+
+        @supports not (aspect-ratio: 1 / 1) {
+            .nav__list {
+                min-height: 31px;
+            }
+
+            .nav__item {
+                height: 100%;
+                @include flex-setting(column, center, center);
+            }
+
+            .nav__link {
+                height: 100%;
+                @include flex-setting(column, center, center);
             }
         }
     }
@@ -243,6 +260,12 @@
 
             &:last-child {
                 margin-right: 0;
+            }
+        }
+
+        @supports not (aspect-ratio: 1 / 1) {
+            .nav__list {
+                min-height: 44px;
             }
         }
 
