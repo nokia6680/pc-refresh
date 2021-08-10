@@ -594,10 +594,6 @@
 
         &__poster {
             padding-top: 25.036603221083457%;
-
-            &-image {
-                object-fit: scale-down;
-            }
         }
 
         @supports (aspect-ratio: 16 / 4) {

@@ -203,13 +203,9 @@
         &__item {
             width: 100%;
             display: grid;
-            grid-template-columns: 54.54545454545454% 45.45454545454546%;
+            grid-template-columns: 57.87878787878788% 42.1212121212121212%;
             gap: 0;
             align-items: stretch;
-        }
-
-        &__frame {
-            padding-top: 60%;
         }
 
         &__banner {
@@ -220,16 +216,6 @@
                 transform: translateX(-50%);
 
                 bottom: 0;
-            }
-        }
-
-        @supports (aspect-ratio: 16 / 9.6) {
-            .intro__frame {
-                padding-top: 0;
-
-                &-image {
-                    aspect-ratio: 16 / 9.6;
-                }
             }
         }
 
@@ -319,7 +305,7 @@
             width: auto !important;
             top: auto;
             bottom: 3% !important;
-            left: 59.39393939% !important;
+            left: 62.7272727272727% !important;
         }
     }
 }
@@ -338,13 +324,13 @@
 
         &__item {
             display: grid;
-            grid-template-columns: 54.71698113207547% 45.28301886792453%;
+            grid-template-columns: 58.30188679245283% 41.69811320754717%;
             gap: 0;
             align-items: stretch;
         }
 
         &__details {
-            padding: 1.875rem 5rem 2.25rem 3.125rem;
+            padding: 1.875rem 2.5rem 2.25rem 3.125rem;
         }
 
         &__link {
@@ -392,7 +378,7 @@
         }
 
         .swiper-pagination-bullets {
-            bottom: 5% !important;
+            bottom: 3% !important;
         }
 
         .swiper-pagination-bullet {
@@ -441,8 +427,12 @@
             margin-bottom: 2.5rem;
         }
 
+        &__item {
+            grid-template-columns: 58.19444444444444% 41.80555555555556%;
+        }
+
         &__details {
-            padding: 3rem 6rem 3rem 4.625rem;
+            padding: 3rem 3rem 3rem 4.625rem;
         }
 
         &__link {
@@ -491,7 +481,7 @@
 
         .swiper-pagination-bullets {
             bottom: 4% !important;
-            left: 59.5454% !important;
+            left: 63.333333% !important;
         }
 
         .swiper-pagination-bullet {

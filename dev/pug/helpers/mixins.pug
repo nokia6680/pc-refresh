@@ -7,12 +7,8 @@ mixin socItem(name, link, type)
 mixin introItem(image, title, description, link, name)
     .intro__item.swiper-slide
         picture.intro__frame
-            source(type="image/webp" media="(min-resolution: 384dpi), (-webkit-min-device-pixel-ratio: 3)" srcset="static/images/content/" +image +"@3x.webp 3x" sizes="100vw")
-            source(type="image/webp" media="(min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2)" srcset="static/images/content/" +image +"@2x.webp 2x" sizes="100vw")
-            source(type="image/webp" srcset="static/images/content/" +image +"@1x.webp" sizes="100vw")
-            source(media="(min-resolution: 384dpi), (-webkit-min-device-pixel-ratio: 3)" srcset="static/images/content/" +image +"@3x.jpg 3x" sizes="100vw")
-            source(media="(min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2)" srcset="static/images/content/" +image +"@2x.jpg 2x" sizes="100vw")
-            img(itemprop="image" src="static/images/content/" +image +"@1x.jpg" sizes="100vw").intro__frame-image
+            source(type="image/webp" srcset="static/images/content/" +image +".webp" sizes="100vw")
+            img(itemprop="image" src="static/images/content/" +image +".jpg" sizes="100vw").intro__frame-image
         .intro__details
             a(href="" +link target="_self").intro__link
                 h1.intro__title=title

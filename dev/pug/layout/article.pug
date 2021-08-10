@@ -18,13 +18,11 @@ html(lang="ru-RU")
         include ../modules/header/header		
         main.main.main--article
             article.article
-                picture.article__poster.article__poster--empty
-                    source(type="image/webp" media="(min-resolution: 384dpi), (-webkit-min-device-pixel-ratio: 3)" srcset="static/images/content/article-intro@3x.webp 3x" sizes="100vw")
-                    source(type="image/webp" media="(min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2)" srcset="static/images/content/article-intro@2x.webp 2x" sizes="100vw")
-                    source(type="image/webp" srcset="static/images/content/article-intro@1x.webp" sizes="100vw")
-                    source(media="(min-resolution: 384dpi), (-webkit-min-device-pixel-ratio: 3)" srcset="static/images/content/article-intro@3x.jpg 3x" sizes="100vw")
-                    source(media="(min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2)" srcset="static/images/content/article-intro@2x.jpg 2x" sizes="100vw")
-                    img(itemprop="image" src="static/images/content/article-intro@1x.jpg" sizes="100vw").article__poster-image
+                picture.article__poster
+                    source(type="image/webp" media="(min-width: 1366px)" srcset="static/images/content/lego.webp")
+                    source(media="(min-width: 1366px)" srcset="static/images/content/lego.jpg")
+                    source(type="image/webp" srcset="static/images/content/lego-mobile.webp")
+                    img(itemprop="image" src="static/images/content/lego-mobile.jpg").article__poster-image
                 .article__intro
                     +breadcrumb([["Главная ", "/index.html"], ["Новости ", "/news.html"], ["Самые страшные мистические фильмы", "#"]])
                     h1.article__name Самые страшные мистические фильмы
