@@ -1,0 +1,110 @@
+.sitemap {
+    width: 100%;
+    @include flex-setting(column, flex-start, center);
+
+    padding: 0 0.9375rem;
+
+    margin-bottom: 2rem;
+
+    &__title {
+        @include font-setting($main-font, 1.25rem, 1.222, 700, $black);
+        @include fluidFontSize(1.25rem, 1.375rem, 20rem, 25.875rem, 1.25rem);
+        text-transform: uppercase;
+        text-align: left;
+
+        margin-bottom: 1.25rem;
+    }
+
+    .map-level-1,
+    .map-level-2,
+    .map-level-3 {
+        width: 100%;
+        @include flex-setting(column, flex-start, flex-start);
+
+        li {
+            width: 100%;
+        }
+
+        a {
+            width: 100%;
+            text-decoration: none;
+
+            @include font-setting($main-font, 1rem, 1.5, 400, #000);
+            @include fluidFontSize(1rem, 1.1875rem, 20rem, 25.875rem, 1rem);
+
+            transition: 0.2s linear;
+
+            &:hover,
+            &:active,
+            &:focus {
+                color: $pink;
+                text-decoration: underline;
+                transition: 0.2s linear;
+            }
+        }
+    }
+}
+
+@include min-screen(768px) {
+    .sitemap {
+        padding: 0 3.375rem;
+
+        &__title {
+            @include fluidFontSize(1.375rem, 1.75rem, 48rem, 85.3125rem, 1.375rem);
+            margin-bottom: 1.875rem;
+        }
+
+        .map-level-1,
+        .map-level-2,
+        .map-level-3 {
+            a {
+                @include fluidFontSize(1rem, 1.25rem, 48rem, 85.3125rem, 1rem);
+
+            }
+        }
+    }
+}
+
+@include min-screen(1366px) {
+    .sitemap {
+        padding: 0 11.20058565153734%;
+
+        &__title {
+            @include fluidFontSize(1.75rem, 2.5rem, 85.375rem, 104.9375rem, 1.75rem);
+            margin-bottom: 2rem;
+        }
+
+        .map-level-1 {
+            a {
+                @include fluidFontSize(1.125rem, 1.375rem, 85.375rem, 104.9375rem, 1.125rem);
+
+            }
+        }
+
+        .map-level-2 {
+            a {
+                @include fluidFontSize(1rem, 1.25rem, 85.375rem, 104.9375rem, 1rem);
+            }
+        }
+
+        .map-level-3 {
+            a {
+                @include fluidFontSize(0.875rem, 1.125rem, 85.375rem, 104.9375rem, 0.875rem);
+            }
+        }
+    }
+}
+
+@include min-screen(1680px) {
+    .sitemap {
+        padding: 0;
+        max-width: 1440px;
+        margin: 0 auto;
+        margin-bottom: 5rem;
+
+        &__title {
+            font-size: 2.5rem;
+            margin-bottom: 3.125rem;
+        }
+    }
+}
