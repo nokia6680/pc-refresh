@@ -269,6 +269,24 @@
             }
         }
 
+        .article__synopsis {
+            .article__synopsis-item {
+                padding-left: 0;
+
+                &::after {
+                    display: none;
+                }
+            }
+        }
+
+        .feed__item {
+            padding-left: 0;
+
+            &::after {
+                display: none;
+            }
+        }
+
         a {
             color: $black;
             text-decoration: none;
