@@ -20,7 +20,7 @@
     }
 
     &__frame {
-        padding-top: 62.5%;
+        padding-top: 56.25%;
         position: relative;
         margin-bottom: 0.5rem;
         width: 100%;
@@ -44,7 +44,7 @@
         }
     }
 
-    @supports (aspect-ratio: 16 / 10) {
+    @supports (aspect-ratio: 16 / 9) {
         .media-item__frame {
             height: 100%;
             padding-top: 0;
@@ -56,7 +56,7 @@
                 bottom: auto;
                 right: auto;
 
-                aspect-ratio: 16 / 10;
+                aspect-ratio: 16 / 9;
 
                 transform-origin: center;
                 transition: 0.3s ease-in;
