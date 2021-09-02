@@ -235,7 +235,7 @@
         padding: 1.125rem 0.9375rem 0 0.9375rem;
         margin-bottom: 1.5625rem;
 
-        ul {
+        ul, ol {
             width: 100%;
 
             @include flex-setting(column, flex-start, flex-start);
@@ -460,6 +460,31 @@
             aspect-ratio: 16 / 9;
         }
     }
+
+    &__banner {
+        margin: 0 auto;
+        margin-bottom: 2.5rem;
+
+        &.quad-banner {
+            width: 100%;
+            max-height: 100%;
+            @include flex-setting(column, flex-start, center);
+        }
+
+        .quad-banner__wrapper {
+            width: 300px;
+            height: 250px;
+            min-height: 250px;
+            max-height: 250px;
+            margin-bottom: 0.625rem;
+
+            background-color: red;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
 }
 
 @include min-screen(768px) {
@@ -538,7 +563,7 @@
             padding: 1.25rem 3.375rem 0 3.375rem;
             margin-bottom: 1.875rem;
 
-            ul {
+            ul, ol {
                 margin-bottom: 1.5rem;
 
                 li {
@@ -635,12 +660,35 @@
             flex-wrap: nowrap;
         }
 
+        &__banner {
+            &.quad-banner {
+                @include flex-setting(row, center, center);
+                width: 100%;
+                height: 250px;
+
+                margin-bottom: 2rem;
+            }
+
+            .quad-banner__wrapper {
+                margin-right: 0.625rem;
+                margin-bottom: 0;
+
+                &:last-of-type {
+                    margin-right: 0;
+                }
+            }
+
+            &.single {
+                display: none;
+            }
+        }
+
         &__wrapper {
             max-width: 66.0377358490566%;
         }
 
         &__aside {
-            max-width: 23.58490566037736%;
+            max-width: 28.30188679245283%;
         }
 
         &__poster {
@@ -729,7 +777,7 @@
             padding: 0;
             margin-bottom: 2.5rem;
 
-            ul {
+            ul, ol {
                 margin-bottom: 1.75rem;
 
                 li {
@@ -799,8 +847,8 @@
             width: 100%;
 
             &.line-banner {
-                width: 520px;
-                height: 64px;
+                width: 728px;
+                height: 90px;
 
                 margin-bottom: 3rem;
             }
@@ -896,7 +944,7 @@
             }
         }
 
-        ul {
+        ul, ol {
             margin-bottom: 1.75rem;
 
             li {
@@ -946,9 +994,8 @@
         }
 
         &__banner {
-            order: 4;
-
             &.line-banner {
+                order: 4;
                 width: 728px;
                 height: 90px;
 

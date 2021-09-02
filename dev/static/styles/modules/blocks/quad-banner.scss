@@ -1,24 +1,8 @@
 .quad-banner {
-    margin: 0 auto;
-
-    @include flex-setting(column, center, center);
-
-    width: 300px;
-    height: 250px;
-
-    margin-bottom: 1.25rem;
-
+    width: 100%;
+    
     &__wrapper {
         @include flex-setting(column, center, center);
-        width: 300px;
-        height: 250px;
-    }
-}
-
-@include min-screen(768px) {
-    .quad-banner {
-        &--main {
-            display: none;
-        }
+        background-color: red;
     }
 }

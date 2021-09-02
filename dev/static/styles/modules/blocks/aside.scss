@@ -41,28 +41,42 @@
         }
 
         #fresh {
-            order: 1;
+            order: 2;
         }
 
         &__banner {
-            order: 2;
+            order: 3;
             display: flex;
 
             margin-bottom: 1.5625rem;
 
             &.quad-banner {
-                width: 224px;
-                height: 186px;
+                width: 300px;
+                height: 100%;
+
+                justify-content: flex-start;
+                align-items: center;
+            }
+
+            &.double {
+                flex-direction: column;
+
+                order: 1;
 
                 .quad-banner__wrapper {
-                    width: inherit;
-                    height: inherit;
+                    margin-bottom: 0.625rem;
                 }
+            }
+
+            .quad-banner__wrapper {
+                @include flex-setting(column, center, center);
+                width: 300px;
+                height: 250px;
             }
         }
 
         #popular {
-            order: 3;
+            order: 4;
         }
 
         .share {
@@ -75,11 +89,6 @@
     .aside {
         &__banner {
             margin-bottom: 2.5rem;
-
-            &.quad-banner {
-                width: 300px;
-                height: 250px;
-            }
         }
     }
 }

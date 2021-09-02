@@ -23,6 +23,12 @@ html(lang="ru-RU")
 
                     .watch__info
                         h1.watch__title Что посмотреть из стоящего кино и сериалов?
+                        
+                        .watch__banner.quad-banner
+                            .quad-banner__wrapper
+                            .quad-banner__wrapper
+                            .quad-banner__wrapper
+                                
                         ul.watch__cats
                             for i in watchList
                                 li.watch__tag
@@ -31,6 +37,7 @@ html(lang="ru-RU")
             section.feed.feed--watch#watch
                 .feed__wrapper
                     b.feed__title Что посмотреть?
+                
                     ul.feed__list.feed__list--watch
                         +mediaItem('feed__item', 'feed-image-1', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', 'show.html', '2023', '22-07-2021 19:40', '22.07.2021')
                         +mediaItem('feed__item', 'feed-image-3', 'У кортни Кокс день рождения, и её поздравляет Дженнифер Энистон', '#', '2023', '22-07-2021 19:40', '22.07.2021')

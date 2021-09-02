@@ -11,6 +11,32 @@
     &__info {
         display: none;
     }
+
+    &__banner {
+        margin: 0 auto;
+        margin-bottom: 2.5rem;
+
+        &.quad-banner {
+            width: 100%;
+            max-height: 100%;
+            height: 790px;
+            @include flex-setting(column, flex-start, center);
+        }
+
+        .quad-banner__wrapper {
+            width: 300px;
+            height: 250px;
+            min-height: 250px;
+            max-height: 250px;
+            margin-bottom: 0.625rem;
+
+            background-color: red;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
 }
 
 @include min-screen(768px) {
@@ -137,6 +163,14 @@
             a {
                 @include fluidFontSize(1.125rem, 1.375rem, 85.375rem, 104.9375rem, 1.125rem);
                 line-height: 1.222;
+            }
+        }
+
+        &__banner {
+            &.quad-banner {
+                @include flex-setting(row, space-between, center);
+                width: 940px;
+                height: 250px;
             }
         }
 
