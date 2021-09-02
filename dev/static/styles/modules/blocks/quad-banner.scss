@@ -1,8 +1,7 @@
 .quad-banner {
     width: 100%;
-    
+
     &__wrapper {
         @include flex-setting(column, center, center);
-        background-color: red;
     }
 }
