@@ -23,17 +23,14 @@ html(lang="ru-RU")
 
                     .watch__info
                         h1.watch__title Что посмотреть из стоящего кино и сериалов?
-                        
-                        .watch__banner.quad-banner
-                            .quad-banner__wrapper
-                            .quad-banner__wrapper
-                            .quad-banner__wrapper
-                                
                         ul.watch__cats
                             for i in watchList
                                 li.watch__tag
                                     a(href="" +i.link target="_self").watch__tag-link=i.name
-
+                    .watch__banner.quad-banner
+                        .quad-banner__wrapper
+                        .quad-banner__wrapper
+                        .quad-banner__wrapper
             section.feed.feed--watch#watch
                 .feed__wrapper
                     b.feed__title Что посмотреть?
